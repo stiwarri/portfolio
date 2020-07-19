@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Shubham Tiwari's portfolio web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/STiwari1097/portfolio.git"
+  },
+  "keywords": [
+    "Shubham",
+    "Tiwari",
+    "Software",
+    "Engineer",
+    "Web",
+    "Developer"
+  ],
+  "author": "Shubham Tiwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/STiwari1097/portfolio/issues"
+  },
+  "homepage": "https://github.com/STiwari1097/portfolio#readme"
+}
