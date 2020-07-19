@@ -1,0 +1,88 @@
+/* Typography Styles */
+.extra-large-text {
+    font-size: $extra-large-font;
+
+    @media screen and (max-width: 640px) {
+        font-size: $large-font;
+    }
+}
+
+.large-text {
+    font-size: $large-font;
+
+    @media screen and (max-width: 640px) {
+        font-size: $medium-font;
+    }
+}
+
+.medium-text {
+    font-size: $medium-font;
+
+    @media screen and (max-width: 640px) {
+        font-size: $regular-font;
+    }
+}
+
+.regular-text {
+    font-size: $regular-font;
+
+    @media screen and (max-width: 640px) {
+        font-size: $small-font;
+    }
+}
+
+.small-text {
+    font-size: $small-font;
+}
+
+.primary-text {
+    color: $primary-color;
+}
+
+.secondary-text {
+    color: $secondary-color;
+}
+
+.full-stop {
+    font-weight: bold;
+    color: $primary-color;
+}
+
+/* Night Light Toggle Button Styles */
+.night-light-toggle-button {
+    .night-light-checkbox {
+        position: absolute;
+        visibility: hidden;
+
+        &:checked+.night-light-label .night-light-ball {
+            transform: translateX(28px);
+        }
+    }
+
+    .night-light-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 64px;
+        height: 32px;
+        background-color: rgb(18, 18, 25);
+        padding: 4px 6px;
+        border-radius: 64px;
+
+        .fa-moon,
+        .fa-sun {
+            color: white;
+            font-size: 20px;
+        }
+
+        .night-light-ball {
+            display: inline-block;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(160, 10, 10);
+            border-radius: 50%;
+            transition: transform 0.3s linear;
+        }
+    }
+}
