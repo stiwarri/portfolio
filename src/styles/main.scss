@@ -2,6 +2,8 @@
 @import './_common';
 
 #header {
+
+    /* Top Navbar Styles */
     .top-navbar {
         height: 72px;
 
@@ -28,17 +30,33 @@
             }
         }
 
+        .hamburger-menu-button {
+            height: 32px;
+            width: 32px;
+            cursor: pointer;
+
+            .fa-bars {
+                font-size: 32px;
+            }
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
         .menu-options {
             position: absolute;
-            top: 64px;
+            top: 72px;
             right: 10%;
             z-index: 1;
             width: 180px;
-            height: 280px;
+            height: 284px;
             padding: 8px 0;
-            color: $white-color;
-            background-color: $secondary-color;
             opacity: 0.9;
+
+            &:hover {
+                display: block;
+            }
 
             @media screen and (max-width: 768px) {
                 right: 5%;
@@ -59,6 +77,7 @@
         }
     }
 
+    /* Hero Section Styles */
     #hero {
         position: relative;
         height: 584px;
@@ -91,8 +110,16 @@
                 .more-info {
                     font-weight: bold;
                     padding: 12px;
-                    border: 2px solid $primary-color;
+                    border: 2px solid $grey-color;
                     cursor: pointer;
+
+                    &:hover {
+                        border: 2px solid $primary-color;
+
+                        .fa-angle-down {
+                            color: $primary-color;
+                        }
+                    }
                 }
             }
 

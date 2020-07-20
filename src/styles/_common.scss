@@ -5,11 +5,10 @@
 }
 
 body {
-    color: $secondary-color;
-    background-color: $white-color;
-    // color: $white-color;
-    // background-color: $secondary-color;
-    font-family: "Raleway", sans-serif;
+    font-family: "Roboto Mono", monospace;
+    // font-family: "Raleway", sans-serif;
+    line-height: 1.6;
+    outline: none;
 }
 
 .container {
@@ -31,24 +30,32 @@ a {
     text-decoration: none;
 }
 
-/* Night Light Toggle Button Styles */
-.night-light-toggle-button {
-    .night-light-checkbox {
+.no-display {
+    display: none;
+}
+
+/* Dark Mode Toggle Button Styles */
+.dark-mode-toggle-button {
+    .dark-mode-checkbox {
         position: absolute;
         visibility: hidden;
 
-        &:checked+.night-light-label .night-light-ball {
-            transform: translateX(28px);
+        &:checked+.dark-mode-label {
+            background-color: $white-color;
+            color: $black-color;
+
+            .dark-mode-ball {
+                transform: translateX(28px);
+            }
         }
     }
 
-    .night-light-label {
+    .dark-mode-label {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 64px;
         height: 32px;
-        background-color: rgb(18, 18, 25);
         color: $white-color;
         padding: 4px 6px;
         border-radius: 64px;
@@ -59,7 +66,7 @@ a {
             font-size: 20px;
         }
 
-        .night-light-ball {
+        .dark-mode-ball {
             display: inline-block;
             position: absolute;
             width: 25px;
@@ -68,17 +75,6 @@ a {
             border-radius: 50%;
             transition: transform 0.3s linear;
         }
-    }
-}
-
-/* Menu Toggle Button Styles */
-.hamburger-menu-button {
-    height: 32px;
-    width: 32px;
-    cursor: pointer;
-
-    .fa-bars {
-        font-size: 32px;
     }
 }
 
@@ -123,10 +119,27 @@ a {
     color: $primary-color;
 }
 
-.secondary-text {
-    color: $secondary-color;
-}
-
 .bold-text {
     font-weight: bold;
+}
+
+.raleway-font {
+    font-family: "Raleway", sans-serif;
+}
+
+/* Themes Styles */
+.bg-dark {
+    background-color: $secondary-color;
+}
+
+.bg-light {
+    background-color: $white-color;
+}
+
+.light-text {
+    color: $white-color;
+}
+
+.dark-text {
+    color: $black-color;
 }

@@ -7,9 +7,9 @@
 }
 
 body {
-  color: #121219;
-  background-color: white;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  line-height: 1.6;
+  outline: none;
 }
 
 .container {
@@ -32,31 +32,38 @@ a {
   text-decoration: none;
 }
 
-/* Night Light Toggle Button Styles */
-.night-light-toggle-button .night-light-checkbox {
+.no-display {
+  display: none;
+}
+
+/* Dark Mode Toggle Button Styles */
+.dark-mode-toggle-button .dark-mode-checkbox {
   position: absolute;
   visibility: hidden;
 }
-.night-light-toggle-button .night-light-checkbox:checked + .night-light-label .night-light-ball {
+.dark-mode-toggle-button .dark-mode-checkbox:checked + .dark-mode-label {
+  background-color: white;
+  color: black;
+}
+.dark-mode-toggle-button .dark-mode-checkbox:checked + .dark-mode-label .dark-mode-ball {
   transform: translateX(28px);
 }
-.night-light-toggle-button .night-light-label {
+.dark-mode-toggle-button .dark-mode-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 64px;
   height: 32px;
-  background-color: #121219;
   color: white;
   padding: 4px 6px;
   border-radius: 64px;
   cursor: pointer;
 }
-.night-light-toggle-button .night-light-label .fa-moon,
-.night-light-toggle-button .night-light-label .fa-sun {
+.dark-mode-toggle-button .dark-mode-label .fa-moon,
+.dark-mode-toggle-button .dark-mode-label .fa-sun {
   font-size: 20px;
 }
-.night-light-toggle-button .night-light-label .night-light-ball {
+.dark-mode-toggle-button .dark-mode-label .dark-mode-ball {
   display: inline-block;
   position: absolute;
   width: 25px;
@@ -64,16 +71,6 @@ a {
   background-color: #b92b27;
   border-radius: 50%;
   transition: transform 0.3s linear;
-}
-
-/* Menu Toggle Button Styles */
-.hamburger-menu-button {
-  height: 32px;
-  width: 32px;
-  cursor: pointer;
-}
-.hamburger-menu-button .fa-bars {
-  font-size: 32px;
 }
 
 /* Typography Styles */
@@ -121,14 +118,35 @@ a {
   color: #b92b27;
 }
 
-.secondary-text {
-  color: #121219;
-}
-
 .bold-text {
   font-weight: bold;
 }
 
+.raleway-font {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Themes Styles */
+.bg-dark {
+  background-color: #121219;
+}
+
+.bg-light {
+  background-color: white;
+}
+
+.light-text {
+  color: white;
+}
+
+.dark-text {
+  color: black;
+}
+
+#header {
+  /* Top Navbar Styles */
+  /* Hero Section Styles */
+}
 #header .top-navbar {
   height: 72px;
 }
@@ -151,17 +169,29 @@ a {
 #header .top-navbar .nav-items .nav-item {
   margin-left: 16px;
 }
+#header .top-navbar .hamburger-menu-button {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+#header .top-navbar .hamburger-menu-button .fa-bars {
+  font-size: 32px;
+}
+#header .top-navbar .hamburger-menu-button:hover {
+  color: #b92b27;
+}
 #header .top-navbar .menu-options {
   position: absolute;
-  top: 64px;
+  top: 72px;
   right: 10%;
   z-index: 1;
   width: 180px;
-  height: 280px;
+  height: 284px;
   padding: 8px 0;
-  color: white;
-  background-color: #121219;
   opacity: 0.9;
+}
+#header .top-navbar .menu-options:hover {
+  display: block;
 }
 @media screen and (max-width: 768px) {
   #header .top-navbar .menu-options {
@@ -213,8 +243,14 @@ a {
 #header #hero > .container .hero-bio .more-info {
   font-weight: bold;
   padding: 12px;
-  border: 2px solid #b92b27;
+  border: 2px solid #cecfce;
   cursor: pointer;
+}
+#header #hero > .container .hero-bio .more-info:hover {
+  border: 2px solid #b92b27;
+}
+#header #hero > .container .hero-bio .more-info:hover .fa-angle-down {
+  color: #b92b27;
 }
 #header #hero > .container .hero-footer {
   margin-bottom: 28px;
