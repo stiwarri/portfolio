@@ -123,23 +123,54 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.elements = void 0;
+exports.globals = exports.elements = void 0;
 var elements = {
   bodyElement: document.body,
   navigationItems: document.querySelector('.nav-items'),
   darkModeCheckbox: document.getElementById('dark-mode-checkbox'),
   menuButton: document.querySelector('.hamburger-menu-button'),
-  menuOptions: document.querySelector('.menu-options')
+  menuOptions: document.querySelector('.menu-options'),
+  ageContainer: document.querySelector('.age-container')
 };
 exports.elements = elements;
+var globals = {
+  dateOfBirth: new Date('10 Sep 1997')
+};
+exports.globals = globals;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _utils = require("./utils");
 
 /**
+ * Execute on load
+ */
+window.onload = function (event) {
+  // Update age
+  var dob = _utils.globals.dateOfBirth;
+  var age = new Date(Date.now() - dob.getTime()).getFullYear() - 1970;
+  _utils.elements.ageContainer.textContent = age;
+};
+
+;
+/**
+ * Handle document click
+ */
+
+var handleDocumentClick = function handleDocumentClick(event) {
+  // close menu dropdown
+  if (!_utils.elements.navigationItems.contains(event.target)) {
+    _utils.elements.menuOptions.classList.add('no-display');
+
+    _utils.elements.menuButton.classList.remove('primary-text');
+  }
+};
+
+document.addEventListener('click', handleDocumentClick);
+/**
  * Handle dark mode toggle button
  */
+
 var handleThemeChange = function handleThemeChange(event) {
   var isDarkModeOn = event.target.checked;
 
@@ -183,21 +214,6 @@ var handleMenuOptionToggle = function handleMenuOptionToggle(event) {
 };
 
 _utils.elements.menuButton.addEventListener('click', handleMenuOptionToggle);
-/**
- * Handle document click
- */
-
-
-var handleDocumentClick = function handleDocumentClick(event) {
-  // close menu dropdown
-  if (!_utils.elements.navigationItems.contains(event.target)) {
-    _utils.elements.menuOptions.classList.add('no-display');
-
-    _utils.elements.menuButton.classList.remove('primary-text');
-  }
-};
-
-document.addEventListener('click', handleDocumentClick);
 },{"./utils":"js/utils.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -226,7 +242,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61931" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49778" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

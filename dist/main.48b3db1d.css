@@ -6,10 +6,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  min-width: 320px;
   font-family: "Roboto Mono", monospace;
   line-height: 1.6;
   outline: none;
+  transition: background-color 0.5s ease;
 }
 
 .container {
@@ -30,10 +36,19 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: inline-block;
 }
 
 .no-display {
   display: none;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 /* Dark Mode Toggle Button Styles */
@@ -73,6 +88,25 @@ a {
   transition: transform 0.3s linear;
 }
 
+.section-title {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.section-sub-title {
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 24px;
+}
+
+.underline {
+  height: 3px;
+  width: 3rem;
+  margin: auto;
+  background: #b92b27;
+}
+
 /* Typography Styles */
 .extra-large-text {
   font-size: 56px;
@@ -101,11 +135,11 @@ a {
   }
 }
 
-.regular-text {
+.regular-text, .section-sub-title {
   font-size: 20px;
 }
 @media screen and (max-width: 768px) {
-  .regular-text {
+  .regular-text, .section-sub-title {
     font-size: 16px;
   }
 }
@@ -114,11 +148,11 @@ a {
   font-size: 16px;
 }
 
-.primary-text {
+.primary-text, .section-sub-title {
   color: #b92b27;
 }
 
-.bold-text {
+.bold-text, .section-sub-title {
   font-weight: bold;
 }
 
@@ -143,148 +177,192 @@ a {
   color: black;
 }
 
-#header {
+header {
   /* Top Navbar Styles */
   /* Hero Section Styles */
 }
-#header .top-navbar {
-  height: 72px;
+header .top-navbar {
+  height: 88px;
 }
-#header .top-navbar > .container {
+header .top-navbar > .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#header .top-navbar .icon {
+header .top-navbar .icon {
   font-size: 48px;
   font-weight: bold;
   padding: 0.5rem 0;
   cursor: pointer;
 }
-#header .top-navbar .nav-items {
+header .top-navbar .nav-items {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-#header .top-navbar .nav-items .nav-item {
+header .top-navbar .nav-items .nav-item {
   margin-left: 16px;
 }
-#header .top-navbar .hamburger-menu-button {
+header .top-navbar .hamburger-menu-button {
   height: 32px;
   width: 32px;
   cursor: pointer;
 }
-#header .top-navbar .hamburger-menu-button .fa-bars {
+header .top-navbar .hamburger-menu-button .fa-bars {
   font-size: 32px;
 }
-#header .top-navbar .hamburger-menu-button:hover {
+header .top-navbar .hamburger-menu-button:hover {
   color: #b92b27;
 }
-#header .top-navbar .menu-options {
+header .top-navbar .menu-options {
   position: absolute;
-  top: 72px;
+  top: 88px;
   right: 10%;
   z-index: 1;
   width: 180px;
-  height: 284px;
+  height: 316px;
   padding: 8px 0;
   opacity: 0.9;
 }
-#header .top-navbar .menu-options:hover {
+header .top-navbar .menu-options:hover {
   display: block;
 }
 @media screen and (max-width: 768px) {
-  #header .top-navbar .menu-options {
+  header .top-navbar .menu-options {
     right: 5%;
   }
 }
-#header .top-navbar .menu-options .menu-option {
+header .top-navbar .menu-options .menu-option {
   font-size: 16px;
   padding: 12px 20px;
   cursor: pointer;
 }
-#header .top-navbar .menu-options .menu-option:hover {
+header .top-navbar .menu-options .menu-option:hover {
   font-weight: bold;
   color: #b92b27;
   transform: translateX(10%);
   transition: all 0.3s linear;
 }
-#header #hero {
+header #hero {
   position: relative;
-  height: 584px;
+  height: 560px;
   overflow: hidden;
 }
 @media screen and (max-width: 768px) {
-  #header #hero {
+  header #hero {
     height: 520px;
   }
 }
-#header #hero > .container {
-  position: absolute;
-  top: 10%;
-  left: 10%;
+header #hero > .container {
   height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  #header #hero > .container {
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -30%);
+  header #hero > .container {
     text-align: center;
     width: 90%;
   }
 }
-#header #hero > .container .hero-bio {
+header #hero > .container .hero-bio {
   margin-top: 48px;
 }
-#header #hero > .container .hero-bio .more-info {
+header #hero > .container .hero-bio .more-info {
   font-weight: bold;
   padding: 12px;
   border: 2px solid #cecfce;
   cursor: pointer;
 }
-#header #hero > .container .hero-bio .more-info:hover {
+header #hero > .container .hero-bio .more-info:hover {
   border: 2px solid #b92b27;
 }
-#header #hero > .container .hero-bio .more-info:hover .fa-angle-down {
+header #hero > .container .hero-bio .more-info:hover .fa-angle-down {
   color: #b92b27;
 }
-#header #hero > .container .hero-footer {
+header #hero > .container .hero-footer {
   margin-bottom: 28px;
 }
-#header #hero > .container .hero-footer .social-links {
+header #hero > .container .hero-footer .social-links {
   font-weight: bold;
   font-size: 48px;
 }
-#header #hero > .container .hero-footer .social-links .link {
+header #hero > .container .hero-footer .social-links .link {
   padding: 8px 12px;
   cursor: pointer;
 }
-#header #hero > .container .hero-footer .social-links .link:hover {
+header #hero > .container .hero-footer .social-links .link:hover {
   color: #b92b27;
 }
-#header #hero img {
-  display: inline-block;
+header #hero img {
   position: absolute;
   z-index: -1;
   top: -6%;
   right: -12%;
-  width: 40%;
+  width: 38%;
   height: auto;
   max-height: 300%;
   border-radius: 50%;
   opacity: 0.9;
 }
 @media screen and (max-width: 768px) {
-  #header #hero img {
+  header #hero img {
     top: -12%;
     right: -25%;
     width: 125%;
     border-radius: 0;
     opacity: 0.1;
+  }
+}
+@media screen and (min-width: 2160px) {
+  header #hero img {
+    display: none;
+  }
+}
+
+main #about-me {
+  padding: 16px 0;
+}
+main #about-me .figure {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media screen and (max-width: 768px) {
+  main #about-me .figure {
+    flex-direction: column;
+  }
+}
+main #about-me .figure .avatar {
+  width: 25%;
+  text-align: center;
+}
+main #about-me .figure .avatar img {
+  width: 80%;
+  height: 80%;
+  min-height: 100px;
+  border-radius: 50%;
+  border: 3px solid #b92b27;
+}
+@media screen and (max-width: 768px) {
+  main #about-me .figure .avatar {
+    width: 90%;
+    margin: auto;
+  }
+  main #about-me .figure .avatar img {
+    width: 50%;
+    height: 50%;
+  }
+}
+main #about-me .figure .intro {
+  width: 70%;
+  text-align: justify;
+  text-justify: inter-word;
+}
+@media screen and (max-width: 768px) {
+  main #about-me .figure .intro {
+    width: 90%;
+    margin: auto;
   }
 }
 

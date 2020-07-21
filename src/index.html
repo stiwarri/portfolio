@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header id="header">
+    <header>
         <nav class="top-navbar">
             <div class="container">
                 <span class="icon">
@@ -31,14 +31,26 @@
                     <div class="hamburger-menu-button nav-item">
                         <i class="fas fa-bars"></i>
                     </div>
-                    <div class="menu-options bg-dark light-text no-display">
-                        <div class="menu-option">HOME</div>
-                        <div class="menu-option">ABOUT</div>
-                        <div class="menu-option">SKILLS</div>
-                        <div class="menu-option">PORTFOLIO</div>
-                        <div class="menu-option">EXPERIENCE</div>
-                        <div class="menu-option">CONTACT</div>
-                    </div>
+                    <ul class="menu-options bg-dark light-text no-display">
+                        <li class="menu-option">
+                            <a href="#">HOME</a>
+                        </li>
+                        <li class="menu-option">
+                            <a href="#">ABOUT</a>
+                        </li>
+                        <li class="menu-option">
+                            <a href="#">SKILLS</a>
+                        </li>
+                        <li class="menu-option">
+                            <a href="#">PORTFOLIO</a>
+                        </li>
+                        <li class="menu-option">
+                            <a href="#">EXPERIENCE</a>
+                        </li>
+                        <li class="menu-option">
+                            <a href="#">CONTACT</a>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </nav>
@@ -57,21 +69,50 @@
                     </p>
                     <br>
                     <br>
-                    <a class="more-info">
+                    <a href="#about-me" class="more-info">
                         MORE ABOUT ME &nbsp; <i class="fas fa-angle-down"></i>
                     </a>
                 </div>
                 <div class="hero-footer">
                     <div class="social-links">
-                        <i class="fab fa-github link"></i>
-                        <i class="fab fa-codepen link"></i>
-                        <i class="fab fa-linkedin link"></i>
+                        <a href="#"><i class="fab fa-github link"></i></a>
+                        <a href="#"><i class="fab fa-codepen link"></i></a>
+                        <a href="#"><i class="fab fa-linkedin link"></i></a>
                     </div>
                 </div>
             </div>
         </section>
     </header>
     <main>
+        <section id="about-me">
+            <div class="container">
+                <h1 class="section-title">
+                    ABOUT ME
+                </h1>
+                <div class="underline"></div>
+                <p class="section-sub-title">
+                    Let me tell you a little about myself and what I do<span class="bold-text primary-text">.</span>
+                </p>
+                <div class="figure">
+                    <div class="avatar">
+                        <img src="assets/images/my-avatar.png" alt="image" />
+                    </div>
+                    <div class="intro">
+                        Hello, I am a <span class="age-container">22</span> years old Computer Science Engineer
+                        &#128187; living in Hyderabad, India who &#128151;s JavaScript and writing code. I am currently
+                        working at <strong><u><a href="https://www.lntinfotech.com/" target="_blank">Larsen & Toubro
+                                    Infotech</u></strong></a> as a Front End Developer.
+                        <br>
+                        <br>
+                        Have a look at my <strong><u><a href="#skills">skills</a></u></strong> or check out my
+                        <strong><u><a href="#portfolio">portfolio projects</a></u></strong> below and feel free to reach
+                        out if you'd like to chat or if you feel that I'd be a good fit for your team. If you would like
+                        to know more about me, then allow me to buy you a coffee &#9749;. Thank you for stopping by!
+                        &#128591;
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 

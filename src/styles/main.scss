@@ -1,11 +1,11 @@
 @import './_variables';
 @import './_common';
 
-#header {
+header {
 
     /* Top Navbar Styles */
     .top-navbar {
-        height: 72px;
+        height: 88px;
 
         &>.container {
             display: flex;
@@ -46,11 +46,11 @@
 
         .menu-options {
             position: absolute;
-            top: 72px;
+            top: 88px;
             right: 10%;
             z-index: 1;
             width: 180px;
-            height: 284px;
+            height: 316px;
             padding: 8px 0;
             opacity: 0.9;
 
@@ -80,7 +80,7 @@
     /* Hero Section Styles */
     #hero {
         position: relative;
-        height: 584px;
+        height: 560px;
         overflow: hidden;
 
         @media screen and (max-width: 768px) {
@@ -88,18 +88,12 @@
         }
 
         &>.container {
-            position: absolute;
-            top: 10%;
-            left: 10%;
             height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
             @media screen and (max-width: 768px) {
-                top: 30%;
-                left: 50%;
-                transform: translate(-50%, -30%);
                 text-align: center;
                 width: 90%;
             }
@@ -143,12 +137,11 @@
         }
 
         img {
-            display: inline-block;
             position: absolute;
             z-index: -1;
             top: -6%;
             right: -12%;
-            width: 40%;
+            width: 38%;
             height: auto;
             max-height: 300%;
             border-radius: 50%;
@@ -160,6 +153,60 @@
                 width: 125%;
                 border-radius: 0;
                 opacity: 0.1;
+            }
+
+            @media screen and (min-width: 2160px) {
+                display: none;
+            }
+        }
+    }
+}
+
+main {
+    #about-me {
+        padding: 16px 0;
+
+        .figure {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            .avatar {
+                width: 25%;
+                text-align: center;
+
+                img {
+                    width: 80%;
+                    height: 80%;
+                    min-height: 100px;
+                    border-radius: 50%;
+                    border: 3px solid $primary-color;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 90%;
+                    margin: auto;
+
+                    img {
+                        width: 50%;
+                        height: 50%;
+                    }
+                }
+            }
+
+            .intro {
+                width: 70%;
+                text-align: justify;
+                text-justify: inter-word;
+
+                @media screen and (max-width: 768px) {
+                    width: 90%;
+                    margin: auto;
+                }
             }
         }
     }

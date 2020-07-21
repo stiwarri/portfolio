@@ -1,4 +1,27 @@
-import { elements } from './utils';
+import { elements, globals } from './utils';
+
+/**
+ * Execute on load
+ */
+window.onload = event => {
+    // Update age
+    const dob = globals.dateOfBirth;
+    const age = new Date(Date.now() - dob.getTime()).getFullYear() - 1970;
+    elements.ageContainer.textContent = age;
+};;
+
+
+/**
+ * Handle document click
+ */
+const handleDocumentClick = event => {
+    // close menu dropdown
+    if (!elements.navigationItems.contains(event.target)) {
+        elements.menuOptions.classList.add('no-display');
+        elements.menuButton.classList.remove('primary-text');
+    }
+};
+document.addEventListener('click', handleDocumentClick);
 
 /**
  * Handle dark mode toggle button
@@ -22,7 +45,6 @@ const handleThemeChange = event => {
         ['bg-light', 'dark-text'].forEach(cl => elements.menuOptions.classList.remove(cl));
     }
 };
-
 elements.darkModeCheckbox.addEventListener('change', handleThemeChange);
 
 /**
@@ -32,18 +54,4 @@ const handleMenuOptionToggle = event => {
     elements.menuOptions.classList.toggle('no-display');
     elements.menuButton.classList.toggle('primary-text');
 };
-
 elements.menuButton.addEventListener('click', handleMenuOptionToggle);
-
-/**
- * Handle document click
- */
-const handleDocumentClick = event => {
-    // close menu dropdown
-    if (!elements.navigationItems.contains(event.target)) {
-        elements.menuOptions.classList.add('no-display');
-        elements.menuButton.classList.remove('primary-text');
-    }
-};
-
-document.addEventListener('click', handleDocumentClick);

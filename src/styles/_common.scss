@@ -4,11 +4,17 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    min-width: 320px;
     font-family: "Roboto Mono", monospace;
     // font-family: "Raleway", sans-serif;
     line-height: 1.6;
     outline: none;
+    transition: background-color 0.5s ease;
 }
 
 .container {
@@ -28,10 +34,19 @@ ul {
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: inline-block;
 }
 
 .no-display {
     display: none;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 /* Dark Mode Toggle Button Styles */
@@ -76,6 +91,28 @@ a {
             transition: transform 0.3s linear;
         }
     }
+}
+
+.section-title {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 4px 0;
+}
+
+.section-sub-title {
+    @extend .regular-text;
+    @extend .primary-text;
+    @extend .bold-text;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 24px;
+}
+
+.underline {
+    height: 3px;
+    width: 3rem;
+    margin: auto;
+    background: $primary-color;
 }
 
 /* Typography Styles */
