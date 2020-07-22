@@ -144,11 +144,11 @@ img {
   }
 }
 
-.regular-text, .section-sub-title {
+.regular-text, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
   font-size: 1.25rem;
 }
 @media screen and (max-width: 768px) {
-  .regular-text, .section-sub-title {
+  .regular-text, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
     font-size: 1rem;
   }
 }
@@ -157,15 +157,15 @@ img {
   font-size: 1rem;
 }
 
-.primary-text, .section-sub-title {
+.primary-text, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
   color: #b92b27;
 }
 
-.bold-text, .section-sub-title {
+.bold-text, main #portfolio .project-figure .project-intro .tech-stack .technology, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
   font-weight: bold;
 }
 
-.raleway-font {
+.raleway-font, main #portfolio .project-figure .project-intro .project-heading {
   font-family: "Raleway", sans-serif;
 }
 
@@ -318,7 +318,7 @@ header #hero img {
 }
 
 main #about-me {
-  padding: 3rem 0;
+  padding: 1rem 0 3rem 0;
 }
 main #about-me .figure {
   display: flex;
@@ -363,7 +363,7 @@ main #about-me .figure .intro {
   }
 }
 main #skills {
-  padding: 3rem 0;
+  padding: 1rem 0 3rem 0;
 }
 main #skills .tech-icons {
   width: 80%;
@@ -440,6 +440,75 @@ main #skills .progress-bars .progress-bar .percent70 {
 @media screen and (max-width: 768px) {
   main #skills .progress-bars {
     width: 90%;
+  }
+}
+main #portfolio {
+  padding: 1rem 0 3rem 0;
+}
+main #portfolio .project-figure {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+@media screen and (max-width: 768px) {
+  main #portfolio .project-figure {
+    flex-direction: column;
+  }
+}
+main #portfolio .project-figure .project-image {
+  width: 30%;
+  text-align: center;
+}
+main #portfolio .project-figure .project-image img {
+  width: 80%;
+}
+main #portfolio .project-figure .project-image .links-to-project {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+main #portfolio .project-figure .project-image .links-to-project span {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+main #portfolio .project-figure .project-image .links-to-project span:hover {
+  color: #b92b27;
+}
+@media screen and (max-width: 768px) {
+  main #portfolio .project-figure .project-image {
+    width: 90%;
+    margin: auto;
+  }
+}
+main #portfolio .project-figure .project-intro {
+  width: 70%;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-left: 1rem;
+  border-left: 3px solid #b92b27;
+}
+@media screen and (max-width: 768px) {
+  main #portfolio .project-figure .project-intro .project-heading {
+    text-align: center;
+  }
+}
+main #portfolio .project-figure .project-intro .tech-stack {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+main #portfolio .project-figure .project-intro .tech-stack .technology {
+  background-color: #cecfce;
+  color: #121219;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  box-shadow: 0 2px 2px -4px black;
+}
+@media screen and (max-width: 768px) {
+  main #portfolio .project-figure .project-intro {
+    width: 90%;
+    margin: auto;
+    border-left: none;
   }
 }
 

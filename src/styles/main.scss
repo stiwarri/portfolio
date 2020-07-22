@@ -149,7 +149,7 @@ header {
 
 main {
     #about-me {
-        padding: 3rem 0;
+        padding: 1rem 0 3rem 0;
 
         .figure {
             display: flex;
@@ -197,7 +197,7 @@ main {
     }
 
     #skills {
-        padding: 3rem 0;
+        padding: 1rem 0 3rem 0;
 
         .tech-icons {
             width: 80%;
@@ -292,6 +292,89 @@ main {
 
             @media screen and (max-width: 768px) {
                 width: 90%;
+            }
+        }
+    }
+
+    #portfolio {
+        padding: 1rem 0 3rem 0;
+
+        .project-figure {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3.5rem;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            .project-image {
+                width: 30%;
+                text-align: center;
+
+                img {
+                    width: 80%;
+                }
+
+                .links-to-project {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-bottom: 1rem;
+
+                    span {
+                        cursor: pointer;
+                        margin-right: 1rem;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 90%;
+                    margin: auto;
+                }
+            }
+
+            .project-intro {
+                width: 70%;
+                text-align: justify;
+                text-justify: inter-word;
+                padding-left: 1rem;
+                border-left: 3px solid $primary-color;
+
+                .project-heading {
+                    @extend .primary-text;
+                    @extend .raleway-font;
+                    @extend .regular-text;
+                    @extend .bold-text;
+
+                    @media screen and (max-width: 768px) {
+                        text-align: center;
+                    }
+                }
+
+                .tech-stack {
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+
+                    .technology {
+                        @extend .bold-text;
+                        background-color: $grey-color;
+                        color: $secondary-color;
+                        padding: 0.25rem 0.5rem;
+                        margin: 0.5rem 0.5rem 0.5rem 0;
+                        box-shadow: 0 2px 2px -4px black;
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 90%;
+                    margin: auto;
+                    border-left: none;
+                }
             }
         }
     }
