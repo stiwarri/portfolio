@@ -47,10 +47,6 @@ img {
   display: none;
 }
 
-.hide {
-  visibility: hidden;
-}
-
 /* Dark Mode Toggle Button Styles */
 .dark-mode-toggle-button .dark-mode-checkbox {
   position: absolute;
@@ -61,43 +57,56 @@ img {
   color: black;
 }
 .dark-mode-toggle-button .dark-mode-checkbox:checked + .dark-mode-label .dark-mode-ball {
-  transform: translateX(28px);
+  transform: translateX(1.5rem);
 }
 .dark-mode-toggle-button .dark-mode-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 64px;
-  height: 32px;
+  width: 4rem;
+  height: 2rem;
   color: white;
-  padding: 4px 6px;
-  border-radius: 64px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4rem;
   cursor: pointer;
 }
 .dark-mode-toggle-button .dark-mode-label .fa-moon,
 .dark-mode-toggle-button .dark-mode-label .fa-sun {
-  font-size: 20px;
+  font-size: 1rem;
 }
 .dark-mode-toggle-button .dark-mode-label .dark-mode-ball {
   display: inline-block;
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 1.5rem;
+  height: 1.5rem;
   background-color: #b92b27;
   border-radius: 50%;
   transition: transform 0.3s linear;
 }
 
+.section-link {
+  font-weight: bold;
+  padding: 1rem;
+  border: 2px solid #cecfce;
+  cursor: pointer;
+}
+.section-link:hover {
+  border: 2px solid #b92b27;
+}
+.section-link:hover .fa-angle-down {
+  color: #b92b27;
+}
+
 .section-title {
   text-transform: uppercase;
   text-align: center;
-  padding: 4px 0;
+  padding: 0.25rem 0;
 }
 
 .section-sub-title {
   text-align: center;
-  padding: 12px;
-  margin-bottom: 24px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .underline {
@@ -109,43 +118,43 @@ img {
 
 /* Typography Styles */
 .extra-large-text {
-  font-size: 56px;
+  font-size: 3.5rem;
 }
 @media screen and (max-width: 768px) {
   .extra-large-text {
-    font-size: 48px;
+    font-size: 3rem;
   }
 }
 
 .large-text {
-  font-size: 48px;
+  font-size: 3rem;
 }
 @media screen and (max-width: 768px) {
   .large-text {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 
 .medium-text {
-  font-size: 32px;
+  font-size: 2rem;
 }
 @media screen and (max-width: 768px) {
   .medium-text {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
 .regular-text, .section-sub-title {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 @media screen and (max-width: 768px) {
   .regular-text, .section-sub-title {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
 .small-text {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .primary-text, .section-sub-title {
@@ -190,7 +199,7 @@ header .top-navbar > .container {
   align-items: center;
 }
 header .top-navbar .icon {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: bold;
   padding: 0.5rem 0;
   cursor: pointer;
@@ -201,15 +210,15 @@ header .top-navbar .nav-items {
   align-items: center;
 }
 header .top-navbar .nav-items .nav-item {
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 header .top-navbar .hamburger-menu-button {
-  height: 32px;
-  width: 32px;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
 }
 header .top-navbar .hamburger-menu-button .fa-bars {
-  font-size: 32px;
+  font-size: 2rem;
 }
 header .top-navbar .hamburger-menu-button:hover {
   color: #b92b27;
@@ -221,7 +230,7 @@ header .top-navbar .menu-options {
   z-index: 1;
   width: 180px;
   height: 316px;
-  padding: 8px 0;
+  padding: 0.5rem 0;
   opacity: 0.9;
 }
 header .top-navbar .menu-options:hover {
@@ -233,8 +242,8 @@ header .top-navbar .menu-options:hover {
   }
 }
 header .top-navbar .menu-options .menu-option {
-  font-size: 16px;
-  padding: 12px 20px;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
   cursor: pointer;
 }
 header .top-navbar .menu-options .menu-option:hover {
@@ -266,29 +275,17 @@ header #hero > .container {
   }
 }
 header #hero > .container .hero-bio {
-  margin-top: 48px;
-}
-header #hero > .container .hero-bio .more-info {
-  font-weight: bold;
-  padding: 12px;
-  border: 2px solid #cecfce;
-  cursor: pointer;
-}
-header #hero > .container .hero-bio .more-info:hover {
-  border: 2px solid #b92b27;
-}
-header #hero > .container .hero-bio .more-info:hover .fa-angle-down {
-  color: #b92b27;
+  margin-top: 3rem;
 }
 header #hero > .container .hero-footer {
-  margin-bottom: 28px;
+  margin-bottom: 2rem;
 }
 header #hero > .container .hero-footer .social-links {
   font-weight: bold;
-  font-size: 48px;
+  font-size: 3rem;
 }
 header #hero > .container .hero-footer .social-links .link {
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   cursor: pointer;
 }
 header #hero > .container .hero-footer .social-links .link:hover {
@@ -321,7 +318,7 @@ header #hero img {
 }
 
 main #about-me {
-  padding: 16px 0;
+  padding: 3rem 0;
 }
 main #about-me .figure {
   display: flex;
@@ -363,6 +360,86 @@ main #about-me .figure .intro {
   main #about-me .figure .intro {
     width: 90%;
     margin: auto;
+  }
+}
+main #skills {
+  padding: 3rem 0;
+}
+main #skills .tech-icons {
+  width: 80%;
+  margin: 1rem auto;
+  font-size: 3rem;
+  text-align: center;
+}
+main #skills .tech-icons .fa-html5 {
+  color: #E34F26;
+}
+main #skills .tech-icons .fa-css3-alt {
+  color: #1572B6;
+}
+main #skills .tech-icons .fa-sass {
+  color: #ce6b9e;
+}
+main #skills .tech-icons .fa-js {
+  color: #F7DF1E;
+}
+main #skills .tech-icons .fa-react {
+  color: #61DAFB;
+}
+main #skills .tech-icons .fa-angular {
+  color: #dd1b16;
+}
+main #skills .tech-icons .fa-node-js {
+  color: #339933;
+}
+main #skills .tech-icons .fa-database {
+  color: #47A248;
+}
+main #skills .tech-icons .fa-git-alt {
+  color: #F05032;
+}
+main #skills .tech-icons .graphql-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  align-self: baseline;
+}
+main #skills .progress-bars {
+  width: 55%;
+  margin: auto;
+}
+main #skills .progress-bars > p {
+  padding: 0.25rem 0;
+}
+main #skills .progress-bars .progress-bar {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #cecfce;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+main #skills .progress-bars .progress-bar .progress {
+  height: 100%;
+  background-color: #b92b27;
+  border-radius: 3px;
+}
+main #skills .progress-bars .progress-bar .percent90 {
+  width: 90%;
+}
+main #skills .progress-bars .progress-bar .percent85 {
+  width: 85%;
+}
+main #skills .progress-bars .progress-bar .percent80 {
+  width: 80%;
+}
+main #skills .progress-bars .progress-bar .percent75 {
+  width: 75%;
+}
+main #skills .progress-bars .progress-bar .percent70 {
+  width: 70%;
+}
+@media screen and (max-width: 768px) {
+  main #skills .progress-bars {
+    width: 90%;
   }
 }
 

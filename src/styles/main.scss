@@ -26,17 +26,17 @@ header {
             align-items: center;
 
             .nav-item {
-                margin-left: 16px;
+                margin-left: 1rem;
             }
         }
 
         .hamburger-menu-button {
-            height: 32px;
-            width: 32px;
+            height: 2rem;
+            width: 2rem;
             cursor: pointer;
 
             .fa-bars {
-                font-size: 32px;
+                font-size: 2rem;
             }
 
             &:hover {
@@ -51,7 +51,7 @@ header {
             z-index: 1;
             width: 180px;
             height: 316px;
-            padding: 8px 0;
+            padding: .5rem 0;
             opacity: 0.9;
 
             &:hover {
@@ -64,7 +64,7 @@ header {
 
             .menu-option {
                 font-size: $small-font;
-                padding: 12px 20px;
+                padding: .75rem 1.25rem;
                 cursor: pointer;
 
                 &:hover {
@@ -99,33 +99,18 @@ header {
             }
 
             .hero-bio {
-                margin-top: 48px;
-
-                .more-info {
-                    font-weight: bold;
-                    padding: 12px;
-                    border: 2px solid $grey-color;
-                    cursor: pointer;
-
-                    &:hover {
-                        border: 2px solid $primary-color;
-
-                        .fa-angle-down {
-                            color: $primary-color;
-                        }
-                    }
-                }
+                margin-top: 3rem;
             }
 
             .hero-footer {
-                margin-bottom: 28px;
+                margin-bottom: 2rem;
 
                 .social-links {
                     font-weight: bold;
                     font-size: $large-font;
 
                     .link {
-                        padding: 8px 12px;
+                        padding: 0.5rem 0.75rem;
                         cursor: pointer;
 
                         &:hover {
@@ -164,7 +149,7 @@ header {
 
 main {
     #about-me {
-        padding: 16px 0;
+        padding: 3rem 0;
 
         .figure {
             display: flex;
@@ -207,6 +192,106 @@ main {
                     width: 90%;
                     margin: auto;
                 }
+            }
+        }
+    }
+
+    #skills {
+        padding: 3rem 0;
+
+        .tech-icons {
+            width: 80%;
+            margin: 1rem auto;
+            font-size: $large-font;
+            text-align: center;
+
+            .fa-html5 {
+                color: #E34F26;
+            }
+
+            .fa-css3-alt {
+                color: #1572B6;
+            }
+
+            .fa-sass {
+                color: #ce6b9e;
+            }
+
+            .fa-js {
+                color: #F7DF1E;
+            }
+
+            .fa-react {
+                color: #61DAFB;
+            }
+
+            .fa-angular {
+                color: #dd1b16;
+            }
+
+            .fa-node-js {
+                color: #339933;
+            }
+
+            .fa-database {
+                color: #47A248;
+            }
+
+            .fa-git-alt {
+                color: #F05032;
+            }
+
+            .graphql-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                align-self: baseline;
+            }
+        }
+
+        .progress-bars {
+            width: 55%;
+            margin: auto;
+
+            &>p {
+                padding: 0.25rem 0;
+            }
+
+            .progress-bar {
+                width: 100%;
+                height: 0.5rem;
+                background-color: $grey-color;
+                border-radius: 3px;
+                margin-bottom: 1rem;
+
+                .progress {
+                    height: 100%;
+                    background-color: $primary-color;
+                    border-radius: 3px;
+                }
+
+                .percent90 {
+                    width: 90%;
+                }
+
+                .percent85 {
+                    width: 85%;
+                }
+
+                .percent80 {
+                    width: 80%;
+                }
+
+                .percent75 {
+                    width: 75%;
+                }
+
+                .percent70 {
+                    width: 70%;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 90%;
             }
         }
     }

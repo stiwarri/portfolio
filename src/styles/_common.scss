@@ -11,7 +11,6 @@ html {
 body {
     min-width: 320px;
     font-family: "Roboto Mono", monospace;
-    // font-family: "Raleway", sans-serif;
     line-height: 1.6;
     outline: none;
     transition: background-color 0.5s ease;
@@ -45,10 +44,6 @@ img {
     display: none;
 }
 
-.hide {
-    visibility: hidden;
-}
-
 /* Dark Mode Toggle Button Styles */
 .dark-mode-toggle-button {
     .dark-mode-checkbox {
@@ -60,7 +55,7 @@ img {
             color: $black-color;
 
             .dark-mode-ball {
-                transform: translateX(28px);
+                transform: translateX(1.5rem);
             }
         }
     }
@@ -69,23 +64,23 @@ img {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 64px;
-        height: 32px;
+        width: 4rem;
+        height: 2rem;
         color: $white-color;
-        padding: 4px 6px;
-        border-radius: 64px;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4rem;
         cursor: pointer;
 
         .fa-moon,
         .fa-sun {
-            font-size: 20px;
+            font-size: 1rem;
         }
 
         .dark-mode-ball {
             display: inline-block;
             position: absolute;
-            width: 25px;
-            height: 25px;
+            width: 1.5rem;
+            height: 1.5rem;
             background-color: $primary-color;
             border-radius: 50%;
             transition: transform 0.3s linear;
@@ -93,10 +88,25 @@ img {
     }
 }
 
+.section-link {
+    font-weight: bold;
+    padding: 1rem;
+    border: 2px solid $grey-color;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid $primary-color;
+
+        .fa-angle-down {
+            color: $primary-color;
+        }
+    }
+}
+
 .section-title {
     text-transform: uppercase;
     text-align: center;
-    padding: 4px 0;
+    padding: 0.25rem 0;
 }
 
 .section-sub-title {
@@ -104,8 +114,8 @@ img {
     @extend .primary-text;
     @extend .bold-text;
     text-align: center;
-    padding: 12px;
-    margin-bottom: 24px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .underline {
