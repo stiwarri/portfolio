@@ -8,14 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/main.48b3db1d.css">
-    <script src="/js.00a46daa.js" defer=""></script>
     <title>Shubham Tiwari</title>
 <script src="/main.48b3db1d.js"></script></head>
 
 <body>
     <header>
         <!-- Top navbar -->
-        <nav class="top-navbar">
+        <nav class="top-navbar bg-light dark-text">
             <div class="container">
                 <span class="icon">
                     &lt;<a href="#" class="primary-text">st</a>&gt;
@@ -32,26 +31,26 @@
                     <div class="hamburger-menu-button nav-item">
                         <i class="fas fa-bars"></i>
                     </div>
-                    <ul class="menu-options bg-dark light-text no-display">
-                        <li class="menu-option">
-                            <a href="#">HOME</a>
-                        </li>
-                        <li class="menu-option">
-                            <a href="#about-me">ABOUT</a>
-                        </li>
-                        <li class="menu-option">
-                            <a href="#skills">SKILLS</a>
-                        </li>
-                        <li class="menu-option">
-                            <a href="#">PORTFOLIO</a>
-                        </li>
-                        <li class="menu-option">
-                            <a href="#">EXPERIENCE</a>
-                        </li>
-                        <li class="menu-option">
-                            <a href="#">CONTACT</a>
-                        </li>
-                    </ul>
+                    <div class="menu-options bg-dark light-text no-display">
+                        <a href="#">
+                            <li class="menu-option">HOME</li>
+                        </a>
+                        <a href="#about-me">
+                            <li class="menu-option">ABOUT</li>
+                        </a>
+                        <a href="#skills">
+                            <li class="menu-option">SKILLS</li>
+                        </a>
+                        <a href="#portfolio">
+                            <li class="menu-option">PORTFOLIO</li>
+                        </a>
+                        <a href="#work-experience">
+                            <li class="menu-option">WORK EXPERIENCE</li>
+                        </a>
+                        <a href="#">
+                            <li class="menu-option">CONTACT</li>
+                        </a>
+                    </div>
                 </ul>
             </div>
         </nav>
@@ -60,14 +59,14 @@
             <img src="/my-image.5b201454.png" alt="image">
             <div class="container">
                 <div class="hero-bio">
-                    <p class="regular-text">&#128075; Hi there. My name is</p>
+                    <p class="regular-text">&#128075; Hello, world. My name is</p>
                     <h1 class="large-text raleway-font">
                         Shubham Tiwari<span class="bold-text primary-text">.</span>
                     </h1>
                     <br>
                     <p class="regular-text">
                         I'm a
-                        <span class="primary-text bold-text raleway-font">Full Stack Developer.</span>
+                        <span class="primary-text bold-text">Full Stack Developer.</span>
                     </p>
                     <br>
                     <br>
@@ -93,7 +92,7 @@
                     ABOUT ME
                 </h1>
                 <div class="underline"></div>
-                <p class="section-sub-title raleway-font">
+                <p class="section-sub-title">
                     Let me tell you a little about myself and what I do.
                 </p>
                 <div class="figure">
@@ -101,14 +100,14 @@
                         <img src="/my-avatar.303d1f34.png" alt="image">
                     </div>
                     <div class="intro">
-                        Hello, I am a <span class="age-container">22</span> years old Computer Science Engineer
+                        Hi, I am a <span class="age-container">22</span> years old Computer Science Engineer
                         &#128187; living in Hyderabad, India who &#128151;s JavaScript and writing code. I am currently
                         working at <strong><u><a href="https://www.lntinfotech.com/" target="_blank">Larsen & Toubro
                                     Infotech</a></u></strong> as a Front End Developer.
                         <br>
                         <br>
                         Have a look at my <strong><u><a href="#skills">skills</a></u></strong> or check out my
-                        <strong><u><a href="#portfolio">portfolio projects</a></u></strong> below and feel free to reach
+                        <strong><u><a href="#portfolio">portfolio</a></u></strong> below and feel free to reach
                         out if you'd like to chat or if you feel that I'd be a good fit for your team. If you would like
                         to know more about me, then allow me to buy you a coffee &#9749;. Thank you for stopping by!
                         &#128591;
@@ -124,7 +123,7 @@
                     SKILLS
                 </h1>
                 <div class="underline"></div>
-                <p class="section-sub-title raleway-font">
+                <p class="section-sub-title">
                     Technologies I work with.
                 </p>
                 <div class="tech-icons">
@@ -136,6 +135,7 @@
                     <i class="fab fa-angular"></i>
                     <i class="fab fa-node-js"></i>
                     <img class="graphql-icon" src="/graphql-icon.a38673b5.png" alt="graphql">
+                    <!-- <img class="pwa-icon" src="assets/images/pwa-icon.png" alt="pwa"> -->
                     <i class="fas fa-database"></i>
                     <i class="fab fa-git-alt"></i>
                 </div>
@@ -152,7 +152,7 @@
                     <div class="progress-bar">
                         <div class="progress percent80"></div>
                     </div>
-                    <p class="bold-text">React, Redux</p>
+                    <p class="bold-text">ReactJS, Redux</p>
                     <div class="progress-bar">
                         <div class="progress percent85"></div>
                     </div>
@@ -179,160 +179,200 @@
         <section id="portfolio">
             <div class="container">
                 <h1 class="section-title">
-                    SIDE PROJECTS
+                    PORTFOLIO
                 </h1>
                 <div class="underline"></div>
-                <p class="section-sub-title raleway-font">
+                <p class="section-sub-title">
                     I enjoy building web products from scratch and I value scalable code with clean design patterns.
                 </p>
-                <div class="project-figure">
-                    <div class="project-image">
-                        <img src="/upost.85206724.png" alt="image">
-                        <div class="links-to-project">
-                            <a href="https://github.com/STiwari1097/upost" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://upost-live.herokuapp.com/" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                <div class="displayed-projects">
+                    <div class="project-figure">
+                        <div class="project-image">
+                            <img src="/upost.85206724.png" alt="image">
+                            <div class="links-to-project">
+                                <a href="https://github.com/STiwari1097/upost" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://upost-live.herokuapp.com/" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-intro">
+                            <div class="project-heading">uPost</div>
+                            uPost is a MERN full-stack application, which allows a user to create an account and create posts. The Express app includes a MongoDB database via Mongoose and user authentication via JWT. Posts can also be
+                            edited and deleted by the user. The real-time persistent connection is established between client and server using Websocket.
+                            <br>
+                            <div class="tech-stack">
+                                <span class="technology">HTML5</span>
+                                <span class="technology">CSS3</span>
+                                <span class="technology">ReactJS</span>
+                                <span class="technology">Node.js</span>
+                                <span class="technology">Express.js</span>
+                                <span class="technology">MongoDB</span>
+                                <span class="technology">REST</span>
+                                <span class="technology">Websocket</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-intro">
-                        <div class="project-heading">uPost</div>
-                        uPost is a MERN full-stack application, which allows a user to create an account and create posts. The Express app includes a MongoDB database via Mongoose and user authentication via JWT. Posts can also be edited
-                        and deleted by the user. The real-time persistent connection is established between client and server using Websocket.
-                        <br>
-                        <div class="tech-stack">
-                            <span class="technology">HTML5</span>
-                            <span class="technology">CSS3</span>
-                            <span class="technology">ReactJS</span>
-                            <span class="technology">Node.js</span>
-                            <span class="technology">Express.js</span>
-                            <span class="technology">MongoDB</span>
-                            <span class="technology">REST</span>
-                            <span class="technology">Websocket</span>
+                    <div class="project-figure">
+                        <div class="project-image">
+                            <img src="/recipe-finder.7763ec15.png" alt="image">
+                            <div class="links-to-project">
+                                <a href="https://github.com/STiwari1097/recipe-finder" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://recipe-finder-live.netlify.app/" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-intro">
+                            <div class="project-heading">Recipe Finder</div>
+                            Recipe Finder is a vanilla JavaScript application that interacts with a remote API to fetch and display recipe food data. This app uses modern JavaScript tools, such as Parcel to bundle the modules, and Babel to
+                            convert ES6+ back to ES5. The user can search for a specific recipe, and add ingredients to a shopping list or save to a favourites list via local storage.
+                            <br>
+                            <div class="tech-stack">
+                                <span class="technology">HTML5</span>
+                                <span class="technology">CSS3</span>
+                                <span class="technology">SCSS</span>
+                                <span class="technology">VanillaJS (ES6+)</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-figure">
-                    <div class="project-image">
-                        <img src="/recipe-finder.7763ec15.png" alt="image">
-                        <div class="links-to-project">
-                            <a href="https://github.com/STiwari1097/recipe-finder" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://recipe-finder-live.netlify.app/" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                    <div class="project-figure">
+                        <div class="project-image">
+                            <img src="/shop-non-stop.bb13e85e.png" alt="image">
+                            <div class="links-to-project">
+                                <a href="https://github.com/STiwari1097/shop-non-stop" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://shop-non-stop-live.herokuapp.com/" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-intro">
-                        <div class="project-heading">Recipe Finder</div>
-                        Recipe Finder is a vanilla JavaScript application that interacts with a remote API to fetch and display recipe food data. This app uses modern JavaScript tools, such as Parcel to bundle the modules, and Babel to
-                        convert ES6+ back to ES5. The user can search for a specific recipe, and add ingredients to a shopping list or save to a favourites list via local storage.
-                        <br>
-                        <div class="tech-stack">
-                            <span class="technology">HTML5</span>
-                            <span class="technology">CSS3</span>
-                            <span class="technology">SCSS</span>
-                            <span class="technology">VanillaJS (ES6+)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-figure">
-                    <div class="project-image">
-                        <img src="/shop-non-stop.bb13e85e.png" alt="image">
-                        <div class="links-to-project">
-                            <a href="https://github.com/STiwari1097/shop-non-stop" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://shop-non-stop-live.herokuapp.com/" target="_blank"><i class="fas fa-eye"></i> Demo</a>
-                        </div>
-                    </div>
-                    <div class="project-intro">
-                        <div class="project-heading">ShopNonStop</div>
-                        ShopNonStop is a fictional online store built with ReactJS, Redux and Firebase. The application is built as a part of learning React and an idea to practice my skills in ReactJS, Redux and emerging awareness of
-                        Context API and React-Hooks.
-                        <br>
-                        <div class="tech-stack">
-                            <span class="technology">HTML5</span>
-                            <span class="technology">CSS3</span>
-                            <span class="technology">SCSS</span>
-                            <span class="technology">ReactJS</span>
-                            <span class="technology">Redux</span>
-                            <span class="technology">Firebase</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-figure">
-                    <div class="project-image">
-                        <img src="/javascript-calculator.196122bb.png" alt="image">
-                        <div class="links-to-project">
-                            <a href="https://github.com/STiwari1097/freecodecamp-projects/tree/master/Front%20End%20Libraries%20Certification/JavaScript%20Calculator" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://codepen.io/_STiwari/full/mdVXPKv" target="_blank"><i class="fas fa-eye"></i> Demo</a>
-                        </div>
-                    </div>
-                    <div class="project-intro">
-                        <div class="project-heading">Calculator</div>
-                        This mini project is a basic calculator built with ReactJS that performs simple arithematic calculations. I built this application as part of <strong><u><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></u></strong> curriculum.
-                        <br>
-                        <div class="tech-stack">
-                            <span class="technology">HTML5</span>
-                            <span class="technology">CSS3</span>
-                            <span class="technology">ReactJS</span>
+                        <div class="project-intro">
+                            <div class="project-heading">ShopNonStop</div>
+                            ShopNonStop is a fictional online store built with ReactJS, Redux and Firebase. The application is built as a part of learning ReactJS and an idea to practice my skills in ReactJS, Redux and emerging awareness of
+                            Context API and React-Hooks.
+                            <br>
+                            <div class="tech-stack">
+                                <span class="technology">HTML5</span>
+                                <span class="technology">CSS3</span>
+                                <span class="technology">SCSS</span>
+                                <span class="technology">ReactJS</span>
+                                <span class="technology">Redux</span>
+                                <span class="technology">Firebase</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-figure">
-                    <div class="project-image">
-                        <img src="/drum-machine.4048eb0c.png" alt="image">
-                        <div class="links-to-project">
-                            <a href="https://github.com/STiwari1097/freecodecamp-projects/tree/master/Front%20End%20Libraries%20Certification/Drum%20Machine" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://codepen.io/_STiwari/full/WNrdJZY" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                <div class="hidden-projects no-display">
+                    <div class="project-figure">
+                        <div class="project-image">
+                            <img src="/javascript-calculator.196122bb.png" alt="image">
+                            <div class="links-to-project">
+                                <a href="https://github.com/STiwari1097/freecodecamp-projects/tree/master/Front%20End%20Libraries%20Certification/JavaScript%20Calculator" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://codepen.io/_STiwari/full/mdVXPKv" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-intro">
+                            <div class="project-heading">Calculator</div>
+                            This mini project is a basic calculator built with ReactJS that performs simple arithematic calculations. I built this application as part of <strong><u><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></u></strong> curriculum.
+                            <br>
+                            <div class="tech-stack">
+                                <span class="technology">HTML5</span>
+                                <span class="technology">CSS3</span>
+                                <span class="technology">ReactJS</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-intro">
-                        <div class="project-heading">Drum Machine</div>
-                        Drum Machine is a ReactJS web application built with ReactJS that creates percussion sounds, drum beats, and patterns on key press. I built this application as part of <strong><u><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></u></strong> curriculum.
-                        <br>
-                        <div class="tech-stack">
-                            <span class="technology">HTML5</span>
-                            <span class="technology">CSS3</span>
-                            <span class="technology">ReactJS</span>
+                    <div class="project-figure">
+                        <div class="project-image">
+                            <img src="/drum-machine.4048eb0c.png" alt="image">
+                            <div class="links-to-project">
+                                <a href="https://github.com/STiwari1097/freecodecamp-projects/tree/master/Front%20End%20Libraries%20Certification/Drum%20Machine" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://codepen.io/_STiwari/full/WNrdJZY" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-intro">
+                            <div class="project-heading">Drum Machine</div>
+                            Drum Machine is a ReactJS web application built with ReactJS that creates percussion sounds, drum beats, and patterns on key press. I built this application as part of <strong><u><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></u></strong> curriculum.
+                            <br>
+                            <div class="tech-stack">
+                                <span class="technology">HTML5</span>
+                                <span class="technology">CSS3</span>
+                                <span class="technology">ReactJS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-figure">
+                        <div class="project-image">
+                            <img src="/markdown-previewer.27575d8d.png" alt="image">
+                            <div class="links-to-project">
+                                <a href="https://github.com/STiwari1097/freecodecamp-projects/tree/master/Front%20End%20Libraries%20Certification/Markdown%20Previewer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://codepen.io/_STiwari/full/wvMrBrL" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-intro">
+                            <div class="project-heading">Markdown Previewer</div>
+                            Markdown Previewer is a ReactJS powered Markdown editor. Type some Markdown on the left. See the result in the right. Magic. I built this application as part of <strong><u><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></u></strong> curriculum.
+                            <br>
+                            <div class="tech-stack">
+                                <span class="technology">HTML5</span>
+                                <span class="technology">CSS3</span>
+                                <span class="technology">ReactJS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-figure">
+                        <div class="project-image">
+                            <img src="/random-quote-machine.b8d45b2d.png" alt="image">
+                            <div class="links-to-project">
+                                <a href="https://github.com/STiwari1097/freecodecamp-projects/tree/master/Front%20End%20Libraries%20Certification/Random%20Quote%20Machine" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://codepen.io/_STiwari/full/bGErQNL" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-intro">
+                            <div class="project-heading">Random Quote Machine</div>
+                            Random Quote Machine is a small web application built using ReactJS to display random inspirational quotes. I built this application as part of <strong><u><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></u></strong> curriculum.
+                            <br>
+                            <div class="tech-stack">
+                                <span class="technology">HTML5</span>
+                                <span class="technology">CSS3</span>
+                                <span class="technology">ReactJS</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-figure">
-                    <div class="project-image">
-                        <img src="/markdown-previewer.27575d8d.png" alt="image">
-                        <div class="links-to-project">
-                            <a href="https://github.com/STiwari1097/freecodecamp-projects/tree/master/Front%20End%20Libraries%20Certification/Markdown%20Previewer" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://codepen.io/_STiwari/full/wvMrBrL" target="_blank"><i class="fas fa-eye"></i> Demo</a>
-                        </div>
-                    </div>
-                    <div class="project-intro">
-                        <div class="project-heading">Markdown Previewer</div>
-                        Markdown Previewer is a ReactJS powered Markdown editor. Type some Markdown on the left. See the result in the right. Magic. I built this application as part of <strong><u><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></u></strong> curriculum.
-                        <br>
-                        <div class="tech-stack">
-                            <span class="technology">HTML5</span>
-                            <span class="technology">CSS3</span>
-                            <span class="technology">ReactJS</span>
-                        </div>
-                    </div>
+                <div class="show-more-container">
+                    <span class="show-more-projects">
+                        SHOW MORE &nbsp; <i class="fas fa-angle-down"></i>
+                    </span>
                 </div>
-                <div class="project-figure">
-                    <div class="project-image">
-                        <img src="/random-quote-machine.b8d45b2d.png" alt="image">
-                        <div class="links-to-project">
-                            <a href="https://github.com/STiwari1097/freecodecamp-projects/tree/master/Front%20End%20Libraries%20Certification/Random%20Quote%20Machine" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="https://codepen.io/_STiwari/full/bGErQNL" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+            </div>
+        </section>
+        <!-- Work Experience Section -->
+        <section id="work-experience">
+            <div class="container">
+                <h1 class="section-title">
+                    WORK EXPERIENCE
+                </h1>
+                <div class="underline"></div>
+                <p class="section-sub-title">
+                    My professional journey.
+                </p>
+                <div class="work-figure">
+                    <div class="designation-time">
+                        <i class="fa fa-briefcase bg-dark light-text"></i>
+                        <h2 class="designation">
+                            Software Engineer
+                        </h2>
+                        <div class="time-period">
+                            MAY 2018 - PRESENT
                         </div>
                     </div>
-                    <div class="project-intro">
-                        <div class="project-heading">Random Quote Machine</div>
-                        Random Quote Machine is a small web application built using ReactJS to display random inspirational quotes. I built this application as part of <strong><u><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></u></strong> curriculum.
+                    <div class="work-details">
+                        <div class="organization">Larsen & Toubro Infotech</div>
+                        Started my career with LTI as a fresh Computer Science graduate in May, 2018 and since then I have created multiple responsive and dynamic front-end web applications, participating in the whole process of their
+                        development: code design, development, unit testing, performance optimization and maintenance.
                         <br>
-                        <div class="tech-stack">
-                            <span class="technology">HTML5</span>
-                            <span class="technology">CSS3</span>
-                            <span class="technology">ReactJS</span>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <!-- JavaScript -->
+    <script src="/js.00a46daa.js" defer=""></script>
 </body>
 
 </html>

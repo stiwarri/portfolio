@@ -126,11 +126,15 @@ Object.defineProperty(exports, "__esModule", {
 exports.globals = exports.elements = void 0;
 var elements = {
   bodyElement: document.body,
+  topNavbar: document.querySelector('.top-navbar'),
   navigationItems: document.querySelector('.nav-items'),
   darkModeCheckbox: document.getElementById('dark-mode-checkbox'),
   menuButton: document.querySelector('.hamburger-menu-button'),
   menuOptions: document.querySelector('.menu-options'),
-  ageContainer: document.querySelector('.age-container')
+  ageContainer: document.querySelector('.age-container'),
+  showMoreProjectsButton: document.querySelector('.show-more-projects'),
+  hiddenProjects: document.querySelector('.hidden-projects'),
+  breifcaseIcon: document.querySelector('.designation-time .fa-briefcase')
 };
 exports.elements = elements;
 var globals = {
@@ -142,24 +146,34 @@ exports.globals = globals;
 
 var _utils = require("./utils");
 
+// Global State
+var state = {
+  showProjects: false
+};
 /**
  * Execute on load
  */
+
 window.onload = function (event) {
   // Update age
   var dob = _utils.globals.dateOfBirth;
   var age = new Date(Date.now() - dob.getTime()).getFullYear() - 1970;
   _utils.elements.ageContainer.textContent = age;
 };
-
-;
 /**
  * Handle document click
  */
 
+
 var handleDocumentClick = function handleDocumentClick(event) {
   // close menu dropdown
   if (!_utils.elements.navigationItems.contains(event.target)) {
+    _utils.elements.menuOptions.classList.add('no-display');
+
+    _utils.elements.menuButton.classList.remove('primary-text');
+  }
+
+  if (event.target.classList.value.includes('menu-option')) {
     _utils.elements.menuOptions.classList.add('no-display');
 
     _utils.elements.menuButton.classList.remove('primary-text');
@@ -178,6 +192,13 @@ var handleThemeChange = function handleThemeChange(event) {
     // body theme
     ['bg-dark', 'light-text'].forEach(function (cl) {
       return _utils.elements.bodyElement.classList.add(cl);
+    }); // top navbar theme
+
+    ['bg-light', 'dark-text'].forEach(function (cl) {
+      return _utils.elements.topNavbar.classList.remove(cl);
+    });
+    ['bg-dark', 'light-text'].forEach(function (cl) {
+      return _utils.elements.topNavbar.classList.add(cl);
     }); // menu options theme
 
     ['bg-dark', 'light-text'].forEach(function (cl) {
@@ -185,11 +206,25 @@ var handleThemeChange = function handleThemeChange(event) {
     });
     ['bg-light', 'dark-text'].forEach(function (cl) {
       return _utils.elements.menuOptions.classList.add(cl);
+    }); // breifcase-icon theme
+
+    ['bg-dark', 'light-text'].forEach(function (cl) {
+      return _utils.elements.breifcaseIcon.classList.remove(cl);
+    });
+    ['bg-light', 'dark-text'].forEach(function (cl) {
+      return _utils.elements.breifcaseIcon.classList.add(cl);
     });
   } else {
     // body theme
     ['bg-dark', 'light-text'].forEach(function (cl) {
       return _utils.elements.bodyElement.classList.remove(cl);
+    }); // top navbar theme
+
+    ['bg-dark', 'light-text'].forEach(function (cl) {
+      return _utils.elements.topNavbar.classList.remove(cl);
+    });
+    ['bg-light', 'dark-text'].forEach(function (cl) {
+      return _utils.elements.topNavbar.classList.add(cl);
     }); // menu options theme
 
     ['bg-dark', 'light-text'].forEach(function (cl) {
@@ -197,6 +232,13 @@ var handleThemeChange = function handleThemeChange(event) {
     });
     ['bg-light', 'dark-text'].forEach(function (cl) {
       return _utils.elements.menuOptions.classList.remove(cl);
+    }); // breifcase-icon theme
+
+    ['bg-light', 'dark-text'].forEach(function (cl) {
+      return _utils.elements.breifcaseIcon.classList.remove(cl);
+    });
+    ['bg-dark', 'light-text'].forEach(function (cl) {
+      return _utils.elements.breifcaseIcon.classList.add(cl);
     });
   }
 };
@@ -207,13 +249,33 @@ _utils.elements.darkModeCheckbox.addEventListener('change', handleThemeChange);
  */
 
 
-var handleMenuOptionToggle = function handleMenuOptionToggle(event) {
+var handleMenuToggle = function handleMenuToggle(event) {
   _utils.elements.menuOptions.classList.toggle('no-display');
 
   _utils.elements.menuButton.classList.toggle('primary-text');
 };
 
-_utils.elements.menuButton.addEventListener('click', handleMenuOptionToggle);
+_utils.elements.menuButton.addEventListener('click', handleMenuToggle);
+/**
+ * Show more projects
+ */
+
+
+var showMoreProjects = function showMoreProjects(event) {
+  if (!state.showProjects) {
+    _utils.elements.showMoreProjectsButton.innerHTML = "SHOW LESS &nbsp; <i class=\"fas fa-angle-up\"></i>";
+  } else {
+    _utils.elements.showMoreProjectsButton.innerHTML = "SHOW MORE &nbsp; <i class=\"fas fa-angle-down\"></i>";
+  }
+
+  _utils.elements.hiddenProjects.classList.toggle('no-display');
+
+  _utils.elements.hiddenProjects.classList.toggle('animated');
+
+  state.showProjects = !state.showProjects;
+};
+
+_utils.elements.showMoreProjectsButton.addEventListener('click', showMoreProjects);
 },{"./utils":"js/utils.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -242,7 +304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49778" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49759" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -6,6 +6,12 @@ header {
     /* Top Navbar Styles */
     .top-navbar {
         height: 88px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: background-color 0.5s ease;
 
         &>.container {
             display: flex;
@@ -49,14 +55,10 @@ header {
             top: 88px;
             right: 10%;
             z-index: 1;
-            width: 180px;
+            width: 200px;
             height: 316px;
             padding: .5rem 0;
             opacity: 0.9;
-
-            &:hover {
-                display: block;
-            }
 
             @media screen and (max-width: 768px) {
                 right: 5%;
@@ -81,6 +83,7 @@ header {
     #hero {
         position: relative;
         height: 560px;
+        margin-top: 88px;
         overflow: hidden;
 
         @media screen and (max-width: 768px) {
@@ -148,8 +151,10 @@ header {
 }
 
 main {
+
+    /* About Me Section Styles */
     #about-me {
-        padding: 1rem 0 3rem 0;
+        padding: 5rem 0 0 0;
 
         .figure {
             display: flex;
@@ -197,11 +202,11 @@ main {
     }
 
     #skills {
-        padding: 1rem 0 3rem 0;
+        padding: 5rem 0 0 0;
 
         .tech-icons {
             width: 80%;
-            margin: 1rem auto;
+            margin: 0 auto 1rem auto;
             font-size: $large-font;
             text-align: center;
 
@@ -243,6 +248,12 @@ main {
 
             .graphql-icon {
                 width: 2.5rem;
+                height: 2.5rem;
+                align-self: baseline;
+            }
+
+            .pwa-icon {
+                width: 3.5rem;
                 height: 2.5rem;
                 align-self: baseline;
             }
@@ -296,8 +307,9 @@ main {
         }
     }
 
+    /* Portfolio Section Styles */
     #portfolio {
-        padding: 1rem 0 3rem 0;
+        padding: 5rem 0 0 0;
 
         .project-figure {
             display: flex;
@@ -321,7 +333,7 @@ main {
                     justify-content: space-around;
                     margin-bottom: 1rem;
 
-                    span {
+                    a {
                         cursor: pointer;
                         margin-right: 1rem;
 
@@ -342,7 +354,8 @@ main {
                 text-align: justify;
                 text-justify: inter-word;
                 padding-left: 1rem;
-                border-left: 3px solid $primary-color;
+                border-left: 1.5px solid $primary-color;
+                border-radius: 0.4rem;
 
                 .project-heading {
                     @extend .primary-text;
@@ -374,6 +387,95 @@ main {
                     width: 90%;
                     margin: auto;
                     border-left: none;
+                }
+            }
+        }
+
+        .show-more-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+
+    /* Work Experience Section Styles */
+    #work-experience {
+        padding: 5rem 0 0 0;
+
+        .work-figure {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3.5rem;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            .designation-time {
+                position: relative;
+                width: 30%;
+                padding: 1rem 2rem 0 0;
+                text-align: right;
+
+                .fa-briefcase {
+                    position: absolute;
+                    top: 10%;
+                    right: -1.1rem;
+                    padding: .5rem;
+                    border-radius: 50%;
+
+                    @media screen and (max-width: 768px) {
+                        position: absolute;
+                        top: 18%;
+                        right: auto;
+                        left: -1.1rem;
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    padding: 1rem 0 0 2rem;
+                    text-align: left;
+                    border-left: 1.5px solid $primary-color;
+                    border-top-left-radius: 0.4rem;
+                }
+
+                .time-period {
+                    @extend .bold-text;
+                    background-color: $grey-color;
+                    color: $secondary-color;
+                    padding: 0.25rem 0.5rem;
+                    margin: 0.5rem 0;
+                    box-shadow: 0 2px 2px -4px black;
+                    margin-bottom: 1rem;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 90%;
+                    margin: auto;
+                }
+            }
+
+            .work-details {
+                width: 70%;
+                padding: 1rem 0 1rem 2rem;
+                text-align: justify;
+                text-justify: inter-word;
+                border-left: 1.5px solid $primary-color;
+                border-radius: 0.4rem;
+
+                .organization {
+                    @extend .primary-text;
+                    @extend .raleway-font;
+                    @extend .regular-text;
+                    @extend .bold-text;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 90%;
+                    margin: auto;
+                    padding: 0 0 1rem 2rem;
+                    border-left: 1.5px solid $primary-color;
+                    border-radius: 0;
+                    border-bottom-left-radius: 0.4rem;
                 }
             }
         }
