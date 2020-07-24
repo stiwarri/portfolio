@@ -191,7 +191,7 @@ img {
 
 /* Themes Styles */
 .bg-dark {
-  background-color: #121219;
+  background-color: #080810;
 }
 
 .bg-light {
@@ -534,7 +534,7 @@ main #portfolio .project-figure .project-intro .tech-stack {
 }
 main #portfolio .project-figure .project-intro .tech-stack .technology {
   background-color: #cecfce;
-  color: #121219;
+  color: #080810;
   padding: 0.25rem 0.5rem;
   margin: 0.5rem 0.5rem 0.5rem 0;
   box-shadow: 0 2px 2px -4px black;
@@ -579,7 +579,7 @@ main #work-experience .work-figure .designation-time .fa-briefcase {
 @media screen and (max-width: 768px) {
   main #work-experience .work-figure .designation-time .fa-briefcase {
     position: absolute;
-    top: 18%;
+    top: 20%;
     right: auto;
     left: -1.1rem;
   }
@@ -594,7 +594,7 @@ main #work-experience .work-figure .designation-time .fa-briefcase {
 }
 main #work-experience .work-figure .designation-time .time-period {
   background-color: #cecfce;
-  color: #121219;
+  color: #080810;
   padding: 0.25rem 0.5rem;
   margin: 0.5rem 0;
   box-shadow: 0 2px 2px -4px black;
