@@ -5,6 +5,8 @@ export const elements = {
     darkModeCheckbox: document.getElementById('dark-mode-checkbox'),
     menuButton: document.querySelector('.hamburger-menu-button'),
     menuOptions: document.querySelector('.menu-options'),
+    typeWriterElement: document.querySelector(".type-writer"),
+    typeWriterCursorElement: document.querySelector(".type-writer-cursor"),
     ageContainer: document.querySelector('.age-container'),
     showMoreProjectsButton: document.querySelector('.show-more-projects'),
     hiddenProjects: document.querySelector('.hidden-projects'),

@@ -1,4 +1,5 @@
 import { elements, globals } from './utils';
+import TypeWriter from './custom-typewriter';
 
 // Global State
 const state = {
@@ -13,8 +14,29 @@ window.onload = event => {
     const dob = globals.dateOfBirth;
     const age = new Date(Date.now() - dob.getTime()).getFullYear() - 1970;
     elements.ageContainer.textContent = age;
+    // get and set theme
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+        elements.darkModeCheckbox.setAttribute('checked', true);
+        changeTheme(true);
+    } else {
+        elements.darkModeCheckbox.removeAttribute('checked');
+        changeTheme(false);
+    }
 };
 
+/**
+ * Executes when document loads 
+ */
+const onDOMLoad = event => {
+    const typeWriterEl = elements.typeWriterElement;
+    const words = JSON.parse(typeWriterEl.dataset.words);
+    const typeSpeed = Number(typeWriterEl.dataset.typeSpeed);
+    const deleteSpeed = Number(typeWriterEl.dataset.deleteSpeed);
+    const delay = Number(typeWriterEl.dataset.delay);
+    new TypeWriter(typeWriterEl, words, typeSpeed, deleteSpeed, delay);
+};
+document.addEventListener("DOMContentLoaded", onDOMLoad);
 
 /**
  * Handle document click
@@ -37,7 +59,11 @@ document.addEventListener('click', handleDocumentClick);
  */
 const handleThemeChange = event => {
     const isDarkModeOn = event.target.checked;
+    changeTheme(isDarkModeOn);
+    localStorage.setItem('theme', isDarkModeOn ? 'dark' : 'light');
+};
 
+const changeTheme = isDarkModeOn => {
     if (isDarkModeOn) {
         // body theme
         ['bg-dark', 'light-text'].forEach(cl => elements.bodyElement.classList.add(cl));
@@ -47,6 +73,9 @@ const handleThemeChange = event => {
         // menu options theme
         ['bg-dark', 'light-text'].forEach(cl => elements.menuOptions.classList.remove(cl));
         ['bg-light', 'dark-text'].forEach(cl => elements.menuOptions.classList.add(cl));
+        // type-writer cursor theme
+        elements.typeWriterCursorElement.classList.remove('blinking-light');
+        elements.typeWriterCursorElement.classList.add('blinking-dark');
         // breifcase-icon theme
         ['bg-dark', 'light-text'].forEach(cl => elements.breifcaseIcon.classList.remove(cl));
         ['bg-light', 'dark-text'].forEach(cl => elements.breifcaseIcon.classList.add(cl));
@@ -59,6 +88,9 @@ const handleThemeChange = event => {
         // menu options theme
         ['bg-dark', 'light-text'].forEach(cl => elements.menuOptions.classList.add(cl));
         ['bg-light', 'dark-text'].forEach(cl => elements.menuOptions.classList.remove(cl));
+        // type-writer cursor theme
+        elements.typeWriterCursorElement.classList.remove('blinking-dark');
+        elements.typeWriterCursorElement.classList.add('blinking-light');
         // breifcase-icon theme
         ['bg-light', 'dark-text'].forEach(cl => elements.breifcaseIcon.classList.remove(cl));
         ['bg-dark', 'light-text'].forEach(cl => elements.breifcaseIcon.classList.add(cl));

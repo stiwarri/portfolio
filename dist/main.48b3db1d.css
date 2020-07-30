@@ -100,6 +100,63 @@ img {
   transition: transform 0.3s linear;
 }
 
+.type-writer {
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Adjust as needed */
+  animation: typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.blinking-dark {
+  animation: blink-dark 1s infinite;
+}
+
+.blinking-light {
+  animation: blink-light 1s infinite;
+}
+
+@keyframes blink-light {
+  0% {
+    color: #000;
+  }
+  49% {
+    color: #000;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: #000;
+  }
+}
+@keyframes blink-dark {
+  0% {
+    color: #fff;
+  }
+  49% {
+    color: #fff;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: #fff;
+  }
+}
 .section-link, .show-more-projects {
   font-weight: bold;
   padding: 1rem;

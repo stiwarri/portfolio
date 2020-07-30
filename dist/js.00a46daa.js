@@ -131,6 +131,8 @@ var elements = {
   darkModeCheckbox: document.getElementById('dark-mode-checkbox'),
   menuButton: document.querySelector('.hamburger-menu-button'),
   menuOptions: document.querySelector('.menu-options'),
+  typeWriterElement: document.querySelector(".type-writer"),
+  typeWriterCursorElement: document.querySelector(".type-writer-cursor"),
   ageContainer: document.querySelector('.age-container'),
   showMoreProjectsButton: document.querySelector('.show-more-projects'),
   hiddenProjects: document.querySelector('.hidden-projects'),
@@ -141,10 +143,95 @@ var globals = {
   dateOfBirth: new Date('10 Sep 1997')
 };
 exports.globals = globals;
+},{}],"js/custom-typewriter.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var TypeWriter = function TypeWriter(_typeWriterEl, _words) {
+  var _this = this;
+
+  var _typeSpeed = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 150;
+
+  var _deleteSpeed = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 75;
+
+  var _delay = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 3000;
+
+  _classCallCheck(this, TypeWriter);
+
+  _defineProperty(this, "type", function () {
+    var typeWriterEl = _this.typeWriterEl,
+        words = _this.words,
+        typeSpeed = _this.typeSpeed,
+        delay = _this.delay,
+        currentWordIndex = _this.currentWordIndex;
+    var currentWord = words[currentWordIndex];
+    var timer = setInterval(function () {
+      _this.text += currentWord[_this.currentLetterIndex];
+      typeWriterEl.textContent = _this.text;
+
+      if (_this.currentLetterIndex >= currentWord.length - 1) {
+        clearInterval(timer);
+        setTimeout(function () {
+          _this.delete();
+        }, delay);
+      } else {
+        _this.currentLetterIndex++;
+      }
+    }, typeSpeed);
+  });
+
+  _defineProperty(this, "delete", function () {
+    var typeWriterEl = _this.typeWriterEl,
+        deleteSpeed = _this.deleteSpeed;
+    var timer = setInterval(function () {
+      _this.text = _this.text.slice(0, _this.text.length - 1);
+      typeWriterEl.textContent = _this.text;
+
+      if (_this.currentLetterIndex <= 0) {
+        if (_this.currentWordIndex >= _this.words.length - 1) {
+          _this.currentWordIndex = 0;
+        } else {
+          _this.currentWordIndex++;
+        }
+
+        clearInterval(timer);
+
+        _this.type();
+      } else {
+        _this.currentLetterIndex--;
+      }
+    }, deleteSpeed);
+  });
+
+  this.typeWriterEl = _typeWriterEl;
+  this.words = _words;
+  this.typeSpeed = _typeSpeed;
+  this.deleteSpeed = _deleteSpeed;
+  this.delay = _delay;
+  this.currentWordIndex = 0;
+  this.currentLetterIndex = 0;
+  this.text = "";
+  this.type();
+};
+
+var _default = TypeWriter;
+exports.default = _default;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _utils = require("./utils");
+
+var _customTypewriter = _interopRequireDefault(require("./custom-typewriter"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Global State
 var state = {
@@ -158,12 +245,38 @@ window.onload = function (event) {
   // Update age
   var dob = _utils.globals.dateOfBirth;
   var age = new Date(Date.now() - dob.getTime()).getFullYear() - 1970;
-  _utils.elements.ageContainer.textContent = age;
+  _utils.elements.ageContainer.textContent = age; // get and set theme
+
+  var theme = localStorage.getItem('theme');
+
+  if (theme === 'dark') {
+    _utils.elements.darkModeCheckbox.setAttribute('checked', true);
+
+    changeTheme(true);
+  } else {
+    _utils.elements.darkModeCheckbox.removeAttribute('checked');
+
+    changeTheme(false);
+  }
 };
+/**
+ * Executes when document loads 
+ */
+
+
+var onDOMLoad = function onDOMLoad(event) {
+  var typeWriterEl = _utils.elements.typeWriterElement;
+  var words = JSON.parse(typeWriterEl.dataset.words);
+  var typeSpeed = Number(typeWriterEl.dataset.typeSpeed);
+  var deleteSpeed = Number(typeWriterEl.dataset.deleteSpeed);
+  var delay = Number(typeWriterEl.dataset.delay);
+  new _customTypewriter.default(typeWriterEl, words, typeSpeed, deleteSpeed, delay);
+};
+
+document.addEventListener("DOMContentLoaded", onDOMLoad);
 /**
  * Handle document click
  */
-
 
 var handleDocumentClick = function handleDocumentClick(event) {
   // close menu dropdown
@@ -187,7 +300,11 @@ document.addEventListener('click', handleDocumentClick);
 
 var handleThemeChange = function handleThemeChange(event) {
   var isDarkModeOn = event.target.checked;
+  changeTheme(isDarkModeOn);
+  localStorage.setItem('theme', isDarkModeOn ? 'dark' : 'light');
+};
 
+var changeTheme = function changeTheme(isDarkModeOn) {
   if (isDarkModeOn) {
     // body theme
     ['bg-dark', 'light-text'].forEach(function (cl) {
@@ -206,7 +323,12 @@ var handleThemeChange = function handleThemeChange(event) {
     });
     ['bg-light', 'dark-text'].forEach(function (cl) {
       return _utils.elements.menuOptions.classList.add(cl);
-    }); // breifcase-icon theme
+    }); // type-writer cursor theme
+
+    _utils.elements.typeWriterCursorElement.classList.remove('blinking-light');
+
+    _utils.elements.typeWriterCursorElement.classList.add('blinking-dark'); // breifcase-icon theme
+
 
     ['bg-dark', 'light-text'].forEach(function (cl) {
       return _utils.elements.breifcaseIcon.classList.remove(cl);
@@ -232,7 +354,12 @@ var handleThemeChange = function handleThemeChange(event) {
     });
     ['bg-light', 'dark-text'].forEach(function (cl) {
       return _utils.elements.menuOptions.classList.remove(cl);
-    }); // breifcase-icon theme
+    }); // type-writer cursor theme
+
+    _utils.elements.typeWriterCursorElement.classList.remove('blinking-dark');
+
+    _utils.elements.typeWriterCursorElement.classList.add('blinking-light'); // breifcase-icon theme
+
 
     ['bg-light', 'dark-text'].forEach(function (cl) {
       return _utils.elements.breifcaseIcon.classList.remove(cl);
@@ -276,7 +403,7 @@ var showMoreProjects = function showMoreProjects(event) {
 };
 
 _utils.elements.showMoreProjectsButton.addEventListener('click', showMoreProjects);
-},{"./utils":"js/utils.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./utils":"js/utils.js","./custom-typewriter":"js/custom-typewriter.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -304,7 +431,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49759" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60120" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
