@@ -10,9 +10,15 @@ export const elements = {
     ageContainer: document.querySelector('.age-container'),
     showMoreProjectsButton: document.querySelector('.show-more-projects'),
     hiddenProjects: document.querySelector('.hidden-projects'),
-    breifcaseIcon: document.querySelector('.designation-time .fa-briefcase')
+    breifcaseIcon: document.querySelector('.designation-time .fa-briefcase'),
+    locationDetails: document.querySelector('.location-details'),
+    emailDetails: document.querySelector('.email-details'),
+    callDetails: document.querySelector('.call-details')
 };
 
 export const globals = {
-    dateOfBirth: new Date('10 Sep 1997')
+    dateOfBirth: new Date('10 Sep 1997'),
+    emailAddress: 'shubham.tiwari1097@gmail.com',
+    phoneNumber: '+918827868494',
+    locationURL: 'https://www.google.com/maps/place/Hyderabad'
 };

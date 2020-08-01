@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -13,8 +15,7 @@ body {
     min-width: 320px;
     font-family: "Raleway", sans-serif;
     font-family: "Roboto Mono", monospace;
-    line-height: 1.6;
-    outline: none;
+    line-height: 1.5;
     transition: background-color 0.5s ease;
 }
 
@@ -107,9 +108,7 @@ img {
 }
 
 .type-writer {
-    /* The typwriter cursor */
     white-space: nowrap;
-    /* Adjust as needed */
     animation:
         typing 3.5s steps(40, end)
 }
@@ -176,7 +175,12 @@ img {
     }
 }
 
-.section-link {
+.section-link,
+.show-more-projects {
+    text-transform: uppercase;
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
     font-weight: bold;
     padding: 1rem;
     border: 2px solid $grey-color;
@@ -189,10 +193,6 @@ img {
             color: $primary-color;
         }
     }
-}
-
-.show-more-projects {
-    @extend .section-link;
 }
 
 .section-title {

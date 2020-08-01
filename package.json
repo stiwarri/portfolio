@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/STiwari1097/portfolio.git"
+        "url": "git+https://github.com/stiwari-dev/portfolio.git"
     },
     "keywords": [
         "Shubham",
@@ -20,9 +20,9 @@
     "author": "Shubham Tiwari",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/STiwari1097/portfolio/issues"
+        "url": "https://github.com/stiwari-dev/portfolio/issues"
     },
-    "homepage": "https://github.com/STiwari1097/portfolio#readme",
+    "homepage": "https://github.com/stiwari-dev/portfolio#readme",
     "devDependencies": {
         "parcel-bundler": "^1.12.4",
         "sass": "^1.26.10"

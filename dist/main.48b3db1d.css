@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -15,8 +17,7 @@ body {
   min-width: 320px;
   font-family: "Raleway", sans-serif;
   font-family: "Roboto Mono", monospace;
-  line-height: 1.6;
-  outline: none;
+  line-height: 1.5;
   transition: background-color 0.5s ease;
 }
 
@@ -101,9 +102,7 @@ img {
 }
 
 .type-writer {
-  /* The typwriter cursor */
   white-space: nowrap;
-  /* Adjust as needed */
   animation: typing 3.5s steps(40, end);
 }
 
@@ -157,16 +156,23 @@ img {
     color: #fff;
   }
 }
-.section-link, .show-more-projects {
+.section-link,
+.show-more-projects {
+  text-transform: uppercase;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
   font-weight: bold;
   padding: 1rem;
   border: 2px solid #cecfce;
   cursor: pointer;
 }
-.section-link:hover, .show-more-projects:hover {
+.section-link:hover,
+.show-more-projects:hover {
   border: 2px solid #b92b27;
 }
-.section-link:hover .fa-angle-down, .show-more-projects:hover .fa-angle-down {
+.section-link:hover .fa-angle-down,
+.show-more-projects:hover .fa-angle-down {
   color: #b92b27;
 }
 
@@ -217,11 +223,11 @@ img {
   }
 }
 
-.regular-text, main #work-experience .work-figure .work-details .organization, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
+.regular-text, main #contact .contact-details .contact-item .title, main #contact button[type=submit], main #work-experience .work-figure .work-details .organization, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
   font-size: 1.25rem;
 }
 @media screen and (max-width: 768px) {
-  .regular-text, main #work-experience .work-figure .work-details .organization, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
+  .regular-text, main #contact .contact-details .contact-item .title, main #contact button[type=submit], main #work-experience .work-figure .work-details .organization, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
     font-size: 1rem;
   }
 }
@@ -230,15 +236,15 @@ img {
   font-size: 1rem;
 }
 
-.primary-text, main #work-experience .work-figure .work-details .organization, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
+.primary-text, main #contact .contact-details .contact-item .title, main #work-experience .work-figure .work-details .organization, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
   color: #b92b27;
 }
 
-.bold-text, main #work-experience .work-figure .work-details .organization, main #work-experience .work-figure .designation-time .time-period, main #portfolio .project-figure .project-intro .tech-stack .technology, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
+.bold-text, main #contact .contact-details .contact-item .title, main #work-experience .work-figure .work-details .organization, main #work-experience .work-figure .designation-time .time-period, main #portfolio .project-figure .project-intro .tech-stack .technology, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
   font-weight: bold;
 }
 
-.raleway-font, main #work-experience .work-figure .work-details .organization, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
+.raleway-font, main #contact .contact-details .contact-item .title, main #work-experience .work-figure .work-details .organization, main #portfolio .project-figure .project-intro .project-heading, .section-sub-title {
   font-family: "Raleway", sans-serif;
 }
 
@@ -404,7 +410,7 @@ main {
   /* Work Experience Section Styles */
 }
 main #about-me {
-  padding: 5rem 0 0 0;
+  padding: 6rem 0 0 0;
 }
 main #about-me .figure {
   display: flex;
@@ -449,7 +455,7 @@ main #about-me .figure .intro {
   }
 }
 main #skills {
-  padding: 5rem 0 0 0;
+  padding: 6rem 0 0 0;
 }
 main #skills .tech-icons {
   width: 80%;
@@ -534,7 +540,7 @@ main #skills .progress-bars .progress-bar .percent70 {
   }
 }
 main #portfolio {
-  padding: 5rem 0 0 0;
+  padding: 6rem 0 0 0;
 }
 main #portfolio .project-figure {
   display: flex;
@@ -585,22 +591,27 @@ main #portfolio .project-figure .project-intro {
   }
 }
 main #portfolio .project-figure .project-intro .tech-stack {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  text-align: left;
 }
 main #portfolio .project-figure .project-intro .tech-stack .technology {
+  display: inline-block;
   background-color: #cecfce;
   color: #080810;
   padding: 0.25rem 0.5rem;
-  margin: 0.5rem 0.5rem 0.5rem 0;
+  margin: 0.3rem 0.2rem;
   box-shadow: 0 2px 2px -4px black;
+}
+@media screen and (max-width: 768px) {
+  main #portfolio .project-figure .project-intro .tech-stack {
+    text-align: center;
+  }
 }
 @media screen and (max-width: 768px) {
   main #portfolio .project-figure .project-intro {
     width: 90%;
     margin: auto;
     border-left: none;
+    padding-left: 0;
   }
 }
 main #portfolio .show-more-container {
@@ -608,12 +619,11 @@ main #portfolio .show-more-container {
   margin-bottom: 2rem;
 }
 main #work-experience {
-  padding: 5rem 0 0 0;
+  padding: 6rem 0 0 0;
 }
 main #work-experience .work-figure {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 3.5rem;
 }
 @media screen and (max-width: 768px) {
   main #work-experience .work-figure {
@@ -641,14 +651,6 @@ main #work-experience .work-figure .designation-time .fa-briefcase {
     left: -1.1rem;
   }
 }
-@media screen and (max-width: 768px) {
-  main #work-experience .work-figure .designation-time {
-    padding: 1rem 0 0 2rem;
-    text-align: left;
-    border-left: 1.5px solid #b92b27;
-    border-top-left-radius: 0.4rem;
-  }
-}
 main #work-experience .work-figure .designation-time .time-period {
   background-color: #cecfce;
   color: #080810;
@@ -661,6 +663,10 @@ main #work-experience .work-figure .designation-time .time-period {
   main #work-experience .work-figure .designation-time {
     width: 90%;
     margin: auto;
+    padding: 1rem 0 0 1.5rem;
+    text-align: left;
+    border-left: 1.5px solid #b92b27;
+    border-top-left-radius: 0.4rem;
   }
 }
 main #work-experience .work-figure .work-details {
@@ -675,10 +681,139 @@ main #work-experience .work-figure .work-details {
   main #work-experience .work-figure .work-details {
     width: 90%;
     margin: auto;
-    padding: 0 0 1rem 2rem;
+    padding: 0 0 1rem 1.5rem;
     border-left: 1.5px solid #b92b27;
     border-radius: 0;
     border-bottom-left-radius: 0.4rem;
+  }
+}
+main #contact {
+  padding: 6rem 0 0 0;
+}
+main #contact .text-fields {
+  display: grid;
+  grid-template-areas: "name email" "subject phone" "message message";
+  grid-gap: 1rem;
+  width: 80%;
+  margin: 0 auto 1rem auto;
+}
+main #contact .text-fields .text-input {
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 1rem;
+  border: 2px solid #cecfce;
+}
+main #contact .text-fields .text-input:focus, main #contact .text-fields .text-input:hover, main #contact .text-fields .text-input:active {
+  border: 2px solid #b92b27;
+}
+main #contact .text-fields .name-input {
+  grid-area: name;
+}
+main #contact .text-fields .email-input {
+  grid-area: email;
+}
+main #contact .text-fields .subject-input {
+  grid-area: subject;
+}
+main #contact .text-fields .phone-input {
+  grid-area: phone;
+}
+main #contact .text-fields .message-input {
+  grid-area: message;
+  height: 100px;
+}
+@media screen and (max-width: 768px) {
+  main #contact .text-fields {
+    grid-template-areas: "name" "email" "subject" "phone" "message";
+    grid-gap: 1rem;
+    width: 100%;
+  }
+}
+main #contact button[type=submit] {
+  display: block;
+  width: 30%;
+  min-width: 10rem;
+  margin: auto;
+  background-color: #b92b27;
+  color: inherit;
+  font-family: inherit;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid #b92b27;
+  cursor: pointer;
+}
+main #contact button[type=submit]:hover {
+  background-color: inherit;
+  color: #b92b27;
+  font-weight: bold;
+}
+main #contact .contact-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+main #contact .contact-details .contact-item {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+main #contact .contact-details .contact-item .fa:hover,
+main #contact .contact-details .contact-item .fas:hover {
+  color: #b92b27;
+}
+main #contact .contact-details .contact-item .title {
+  margin: 1rem 0;
+}
+@media screen and (max-width: 768px) {
+  main #contact .contact-details {
+    flex-direction: column;
+  }
+  main #contact .contact-details .contact-item {
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  main #contact .contact-details .contact-item .fa,
+main #contact .contact-details .contact-item .fas {
+    color: #b92b27;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+  main #contact .contact-details .title {
+    display: none;
+  }
+}
+
+footer {
+  margin-top: 5rem;
+  background-color: #b92b27;
+}
+footer .container {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .container .social-links {
+  font-weight: bold;
+  font-size: 2rem;
+}
+footer .container .social-links .link {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+footer .container .social-links .link:hover {
+  color: #cecfce;
+}
+@media screen and (max-width: 768px) {
+  footer .container {
+    flex-direction: column;
   }
 }
 

@@ -136,11 +136,17 @@ var elements = {
   ageContainer: document.querySelector('.age-container'),
   showMoreProjectsButton: document.querySelector('.show-more-projects'),
   hiddenProjects: document.querySelector('.hidden-projects'),
-  breifcaseIcon: document.querySelector('.designation-time .fa-briefcase')
+  breifcaseIcon: document.querySelector('.designation-time .fa-briefcase'),
+  locationDetails: document.querySelector('.location-details'),
+  emailDetails: document.querySelector('.email-details'),
+  callDetails: document.querySelector('.call-details')
 };
 exports.elements = elements;
 var globals = {
-  dateOfBirth: new Date('10 Sep 1997')
+  dateOfBirth: new Date('10 Sep 1997'),
+  emailAddress: 'shubham.tiwari1097@gmail.com',
+  phoneNumber: '+918827868494',
+  locationURL: 'https://www.google.com/maps/place/Hyderabad'
 };
 exports.globals = globals;
 },{}],"js/custom-typewriter.js":[function(require,module,exports) {
@@ -403,6 +409,39 @@ var showMoreProjects = function showMoreProjects(event) {
 };
 
 _utils.elements.showMoreProjectsButton.addEventListener('click', showMoreProjects);
+/**
+ * Locate
+ */
+
+
+var locate = function locate() {
+  var locationURL = _utils.globals.locationURL;
+  window.open(locationURL, '_blank');
+};
+
+_utils.elements.locationDetails.addEventListener('click', locate);
+/**
+ * Email
+ */
+
+
+var sendEmail = function sendEmail() {
+  var emailAddress = _utils.globals.emailAddress;
+  window.open("mailto: ".concat(emailAddress));
+};
+
+_utils.elements.emailDetails.addEventListener('click', sendEmail);
+/**
+ * Call
+ */
+
+
+var makeACall = function makeACall() {
+  var phoneNumber = _utils.globals.phoneNumber;
+  window.open("tel: ".concat(phoneNumber), '_self');
+};
+
+_utils.elements.callDetails.addEventListener('click', makeACall);
 },{"./utils":"js/utils.js","./custom-typewriter":"js/custom-typewriter.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

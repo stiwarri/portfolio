@@ -121,3 +121,30 @@ const showMoreProjects = event => {
     state.showProjects = !state.showProjects;
 };
 elements.showMoreProjectsButton.addEventListener('click', showMoreProjects);
+
+/**
+ * Locate
+ */
+const locate = () => {
+    const { locationURL } = globals;
+    window.open(locationURL, '_blank');
+};
+elements.locationDetails.addEventListener('click', locate);
+
+/**
+ * Email
+ */
+const sendEmail = () => {
+    const { emailAddress } = globals;
+    window.open(`mailto: ${emailAddress}`);
+};
+elements.emailDetails.addEventListener('click', sendEmail);
+
+/**
+ * Call
+ */
+const makeACall = () => {
+    const { phoneNumber } = globals;
+    window.open(`tel: ${phoneNumber}`, '_self');
+};
+elements.callDetails.addEventListener('click', makeACall);
