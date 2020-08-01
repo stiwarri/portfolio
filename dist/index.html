@@ -402,11 +402,11 @@
                 </p>
                 <form class="contact-form" method="POST" data-netlify="true" data-netlify-recaptcha="true">
                     <div class="text-fields">
-                        <input type="text" class="text-input name-input" name="name" placeholder="Name">
-                        <input type="text" class="text-input email-input" name="email" placeholder="Email Address">
+                        <input type="text" class="text-input name-input" name="name" placeholder="Name" required="">
+                        <input type="text" class="text-input email-input" name="email" placeholder="Email Address" required="">
                         <input type="text" class="text-input subject-input" name="subject" placeholder="Subject">
                         <input type="text" class="text-input phone-input" name="phone" placeholder="Phone">
-                        <textarea class="text-input message-input" name="message" placeholder="Message"></textarea>
+                        <textarea class="text-input message-input" name="message" placeholder="Message" required=""></textarea>
                         <div data-netlify-recaptcha="true"></div>
                     </div>
                     <button type="submit" class="btn">Send Message</button>
