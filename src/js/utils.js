@@ -11,6 +11,8 @@ export const elements = {
     showMoreProjectsButton: document.querySelector('.show-more-projects'),
     hiddenProjects: document.querySelector('.hidden-projects'),
     breifcaseIcon: document.querySelector('.designation-time .fa-briefcase'),
+    contactForm: document.querySelector('.contact-form'),
+    contactFormSubmitButton: document.querySelector('.contact-form button'),
     locationDetails: document.querySelector('.location-details'),
     emailDetails: document.querySelector('.email-details'),
     callDetails: document.querySelector('.call-details')

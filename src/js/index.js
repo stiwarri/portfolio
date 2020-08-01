@@ -123,6 +123,12 @@ const showMoreProjects = event => {
 elements.showMoreProjectsButton.addEventListener('click', showMoreProjects);
 
 /**
+ * Handle Form Submission
+ */
+const handleFormSubmit = event => event.preventDefault();
+elements.contactForm.addEventListener('submit', handleFormSubmit);
+
+/**
  * Locate
  */
 const locate = () => {
