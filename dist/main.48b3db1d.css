@@ -364,6 +364,9 @@ header #hero > .container {
 header #hero > .container .hero-bio {
   margin-top: 3rem;
 }
+header #hero > .container .hero-bio .work-intro {
+  margin-bottom: 0.75rem;
+}
 header #hero > .container .hero-footer {
   margin-bottom: 2rem;
 }
